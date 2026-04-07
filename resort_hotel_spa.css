@@ -1,0 +1,829 @@
+
+/* ==========================================================================
+   Base Styles
+   ========================================================================== */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Shippori Mincho", "YuMincho", "serif";
+    line-height: 1.6;
+    overflow-x: hidden;}
+img {
+    width: 100%;
+    height: auto;
+    display: block;}
+.mincho {
+    font-family: "Shippori Mincho", "YuMincho", serif;}
+.block {
+    width: 100%;
+    margin-bottom: 6vw;}
+.common_block {
+    width: 90vw;
+    margin: 0 auto;}
+@media (min-width: 1500px) {
+.block {
+    margin-bottom: 90px;}
+.common_block {
+    width: 1350px;}
+}
+@media (max-width: 700px){
+.block:first-child{
+    margin-top: 5vw;}
+}
+    
+/* ==========================================================================
+   header
+   ========================================================================== */
+header {
+    background-color: #000000;
+    padding: 2vw 0;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index:100;}
+.head_r {
+    width: 100%;}
+.nav_btm ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;}
+.nav_btm li {
+    display: flex;
+    align-items: center;}
+.nav_btm a {
+    color: #ffffff;
+    text-decoration: none;
+    font-family: "Shippori Mincho", "YuMincho", serif;
+    font-size: 1.2vw;
+    margin: 0 1.5vw;
+    padding: 0.5vw 0;
+    display: block;
+    transition: color 0.3s;}
+.nav_btm a.selected {
+    color: #c9a063; /* 画像に基づいたゴールド系 */
+    border-bottom: 0.1vw solid #c9a063;
+    padding-bottom: 0.3vw;}
+.nav_btm li:not(:last-child)::after {
+    content: "|";
+    color: #ffffff;
+    font-size: 1vw;
+    font-weight: 100;
+    opacity: 0.6;}
+@media (max-width: 768px) {
+.sp_none {
+    display: block !important;}
+.nav_btm ul {
+    padding: 2vw 4vw;}
+.nav_btm li {
+    margin: 2vw 0;}
+.nav_btm a {
+    font-size: 3.8vw;
+    padding: 1vw 3vw;}
+.nav_btm li:not(:last-child)::after {
+    display: none;}
+.nav_btm a.selected {
+    border-bottom: 0.4vw solid #c9a063;}
+}
+/* ==========================================================
+   ページタイトルエリア (page_tit)
+   ========================================================== */
+.page_tit {
+    margin-top:6vw;
+    position: relative;
+    width: 100%;
+    height: 30vw;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;}
+@media (max-width: 700px) {.page_tit {margin-top:30vw;}}
+@media (min-width: 1500px) {.page_tit {height: 450px;}}
+.page_tit .img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    z-index: 1;}
+.page_tit .img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.6);}
+.page_tit .inner {
+    position: absolute;
+    top: 2vw;
+    left: 4vw;
+    z-index: 3;}
+@media (min-width: 1500px) {
+.page_tit .inner {
+    top: 30px;
+    left: 60px;}
+}
+
+/* パンくず */
+.breadcrumb {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 0.9vw;
+    color: #ffffff;}
+@media (min-width: 1500px) {
+.breadcrumb {
+    font-size: 13.5px;}
+}
+@media (max-width: 700px) {
+.breadcrumb {
+    font-size: 3vw;}
+}
+.breadcrumb li a {
+    color: #ffffff;
+    text-decoration: underline;}
+.breadcrumb li:not(:last-child)::after {
+    content: "/";
+    margin: 0 1vw;}
+/* メイン見出し */
+.page_tit .tit {
+    position: relative;
+    z-index: 3;
+    color: #ffffff;
+    font-size: 4vw;
+    font-weight: normal;
+    letter-spacing: 0.2em;
+    margin: 0;}
+@media (min-width: 1500px) {
+.page_tit .tit {
+    font-size: 60px;}
+}
+@media (max-width: 700px) {
+.page_tit .tit {
+    font-size: 8vw;}
+}
+/* ==========================================================
+   レイアウトコンテナ
+   ========================================================== */
+.wrapper {
+    width: 100%;}
+.block {
+    margin-bottom: 8vw;}
+@media (min-width: 1500px) {
+.block {
+    margin-bottom: 120px;}
+}
+.common_block {
+    width: 90vw;
+    margin: 0 auto;}
+@media (min-width: 1500px) {
+.common_block {
+    width: 1350px;}
+}
+/* ==========================================================
+   画像・テキスト並列ブロック (ふじやま温泉 上部)
+   ========================================================== */
+.common_img_txt {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 5vw 0;}
+/* 背面の黒い装飾ブロック */
+.common_img_txt::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 80vw;
+    height: 85%;
+    background-color: #000000;
+    z-index: 1;}
+@media (min-width: 1500px) {
+.common_img_txt::before {
+    width: 1200px;}
+}
+/* テキストエリア */
+.common_img_txt .txt {
+    position: relative;
+    z-index: 3;
+    width: 45%;
+    order: 2;
+    color: #ffffff;}
+.common_img_txt .txt p {
+    color: #fff;
+    padding: 1vw 3vw;}
+@media (min-width: 1500px) {
+.common_img_txt .txt {
+    padding-left: 75px;}
+}
+.common_img_txt .txt .tit {
+    margin-bottom: 2vw;}
+@media (min-width: 1500px) {
+.common_img_txt .txt .tit {
+    margin-bottom: 30px;}
+}
+.common_img_txt .txt .tit img {
+    width: 20vw;
+    height: auto;}
+@media (min-width: 1500px) {
+.common_img_txt .txt .tit img {
+    width: 300px;}
+}
+.common_img_txt .txt p {
+    font-size: 1.1vw;
+    text-align: justify;}
+@media (min-width: 1500px) {
+.common_img_txt .txt p {
+    font-size: 16.5px;}
+}
+/* 画像エリア */
+.common_img_txt .img {
+    position: relative;
+    z-index: 2;
+    width: 55%;
+    order: 1;
+    margin-top: 5vw;
+    margin-bottom: -1vw;}
+@media (max-width: 700px) {
+.common_img_txt {
+    flex-direction: column;
+    padding: 0;}
+.common_img_txt::before {
+    width: 100%;
+    height: 70%;
+    bottom: 0;}
+.common_img_txt .txt {
+    width: 100%;
+    padding: 8vw 5vw;
+    box-sizing: border-box;}
+.common_img_txt .txt .tit img {
+    width: 60vw;}
+.common_img_txt .txt p {
+    font-size: 3.8vw;}
+.common_img_txt .img {
+    width: 90vw;
+    margin: 0 auto;}
+}
+/* ==========================================================
+   スライダブロック
+   ========================================================== */
+.common_slider {
+    position: relative;
+    padding: 4vw 0;
+    background-color: #000000;}
+@media (max-width: 700px) {
+.common_slider {
+    padding: 8vw 0;}
+}
+/* メインスライド */
+.slider {
+    width: 80vw;
+    margin: 0 auto 2vw auto;
+    position: relative;}
+@media (min-width: 1500px) {
+.slider {
+    width: 1200px;
+    margin-bottom: 30px;}
+}
+/* 左右の矢印ボタン（擬似的に配置） */
+.slider .slick-prev,
+.slider .slick-next {
+    position: absolute;
+    top: 50%;
+    width: 4vw;
+    height: 4vw;
+    background-color: rgba(255,255,255,0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    transform: translateY(-50%);
+    z-index: 10;
+    cursor: pointer;
+    font-size: 0;}
+.slider .slick-prev{
+    left: -5vw;}
+.slider .slick-prev::before {
+    content: "←";
+    color: #ffffff;
+    font-size: 1.5vw;
+    font-family: serif;}
+.slider .slick-next {
+    right: -5vw;}
+.slider .slick-next::before {
+    content: "→";
+    color: #ffffff;
+    font-size: 1.5vw;
+    font-family: serif;}
+.slick-dots {
+    display: none !important;}
+@media (max-width: 700px) {
+.slider .slick-prev,
+.slider .slick-next {
+    width: 10vw;
+    height: 10vw;
+    background-color: rgba(0, 0, 0, 0.5);}
+.slider .slick-prev {
+    left: 2vw;}
+.slider .slick-next {
+    right: 2vw;}
+.slider .slick-prev::before,
+.slider .slick-next::before {
+    font-size: 4vw;}
+}
+@media (min-width: 1500px) {
+.slider .slick-prev,
+.slider .slick-next {
+    width: 60px;
+    height: 60px;}
+.slider .slick-prev::before {
+    font-size: 22.5px;}
+.slider .slick-next::before {
+    font-size: 22.5px;}
+}
+/* サムネイル */
+.thum {
+    display: flex;
+    justify-content: center;
+    gap: 1vw;
+    width: 80vw;
+    margin: 0 auto;}
+@media (min-width: 1500px) {
+.thum {
+    width: 1200px;
+    gap: 15px;}
+}
+.thum_slides {
+    width: 12vw;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 0.3s;}
+.thum_slides:hover {
+    opacity: 1;}
+/* ==========================================================
+   下部テキストブロック
+   ========================================================== */
+.common_block p {
+    font-size: 1.1vw;
+    margin-bottom: 2vw;
+    color: #333333;}
+@media (min-width: 1500px) {
+.common_block p {
+    font-size: 16.5px;
+    margin-bottom: 30px;}
+}
+@media (max-width: 700px) {
+.common_block p {
+    font-size: 4vw;
+    margin-bottom: 5vw;}
+}
+/* ==========================================================
+   アンカーナビゲーション (alink)
+   ========================================================== */
+.block .alink {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-top: 0.1vw solid #dddddd;
+    border-bottom: 0.1vw solid #dddddd;}
+@media (min-width: 1500px) {
+.block .alink {
+    border-top: 1px solid #dddddd;
+    border-bottom: 1px solid #dddddd;}
+}
+.block .alink li {
+    flex: 1;
+    border-right: 0.1vw solid #dddddd;}
+.block .alink li:last-child {
+    border-right: none;}
+@media (min-width: 1500px) {
+.block .alink li {
+    border-right: 1px solid #dddddd;}
+}
+.block .alink li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5vw 0;
+    color: #666666;
+    text-decoration: none;
+    font-size: 1vw;
+    position: relative;
+    transition: color 0.3s;}
+@media (min-width: 1500px) {
+.block .alink li a {
+    padding: 22.5px 0;
+    font-size: 15px;}
+}
+@media (max-width: 700px) {
+.block .alink {
+    flex-wrap: wrap;}
+.block .alink li {
+    flex: 0 0 100%;
+    border-bottom: 0.1vw solid #dddddd;}
+.block .alink li a {
+    font-size: 3vw;
+    padding: 4vw 0;}
+}
+.block .alink li a::after {
+    content: "↓";
+    margin-left: 1vw;
+    color: #c9a063;
+    font-size: 0.8vw;}
+@media (min-width: 1500px) {
+.block .alink li a::after {
+    margin-left: 15px;
+    font-size: 12px;}
+}
+/* ==========================================================
+   セクション見出し (h2)
+   ========================================================== */
+.block h2 {
+    font-size: 2.2vw;
+    font-weight: normal;
+    padding: 0 5vw 1.5vw 5vw;
+    margin: 5vw 0;
+    border-bottom: 0.1vw solid #dddddd;
+    position: relative;
+    font-family: "Shippori Mincho", "YuMincho", serif;}
+@media (min-width: 1500px) {
+.block h2 {
+    font-size: 33px;
+    padding: 0 75px 22.5px 75px;
+    margin: 75px 0;
+    border-bottom: 1px solid #dddddd;}
+}
+@media (max-width: 700px) {
+.block h2 {
+    font-size: 6vw;
+    padding: 0 5vw 3vw 5vw;}
+}
+.block h2::after {
+    content: "";
+    position: absolute;
+    bottom: -0.1vw;
+    left: 5vw;
+    width: 8vw;
+    height: 0.3vw;
+    background-color: #c9a063;}
+@media (min-width: 1500px) {
+.block h2::after {
+    bottom: -1px;
+    left: 75px;
+    width: 120px;
+    height: 4px;}
+}
+/* ==========================================================
+   2カラムグリッド (common_2col)
+   ========================================================== */
+.common_2col {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;}
+.common_2col .col {
+    width: 48%;
+    margin-bottom: 5vw;}
+.common_2col .col a{
+    text-decoration: none;}
+@media (min-width: 1500px) {
+.common_2col .col {
+    margin-bottom: 75px;}
+}
+@media (max-width: 700px) {
+.common_2col .col {
+    width: 100%;
+    margin-bottom: 10vw;}
+}
+/* 画像 */
+.common_2col .col .img {
+    margin-bottom: 1.5vw;}
+@media (min-width: 1500px) {
+.common_2col .col .img {
+    margin-bottom: 22.5px;}
+}
+/* タイトルとタグのエリア */
+.common_2col .col .txt {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5vw;
+    border-bottom: 0.1vw solid #eeeeee;
+    padding-bottom: 1vw;}
+@media (min-width: 1500px) {
+.common_2col .col .txt {
+    margin-bottom: 22.5px;
+    border-bottom: 1px solid #eeeeee;
+    padding-bottom: 15px;}
+}
+.common_2col .col .tit {
+    font-size: 1.6vw;
+    margin: 0;
+    font-weight: normal;}
+@media (min-width: 1500px) {
+.common_2col .col .tit {
+    font-size: 24px;}
+}
+@media (max-width: 700px) {
+.common_2col .col .tit {
+    font-size: 5vw;}
+}
+/* 温度タグ */
+.common_2col .col .tag {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 0 1.5vw;}
+.common_tag{
+    list-style: none;
+    padding: 0;
+    margin: 2vw 0 1.5vw 0;
+    width: 20vw;}
+@media (min-width: 1500px) {
+.common_2col .col .tag,.common_tag {
+    margin-left: 22.5px;}
+}
+.common_2col .col .tag li,
+.common_tag li {
+    font-size: 0.8vw;
+    border: 0.1vw solid #cccccc;
+    padding: 0.2vw 0.8vw;
+    color: #999999;
+    border-radius: 0.2vw;}
+@media (min-width: 1500px) {
+.common_2col .col .tag li,
+.common_tag li {
+    font-size: 12px;
+    border: 1px solid #cccccc;
+    padding: 3px 12px;
+    border-radius: 3px;}
+}
+@media (max-width: 700px) {
+.common_tag{
+    width: 60%;}
+.common_2col .col .tag li ,
+.common_tag li{
+    font-size: 3vw;
+    padding: 1vw 3vw;}
+}
+/* 詳細テキスト */
+.common_2col .col .detail p {
+    font-size: 1vw;
+    line-height: 1.8;
+    color: #333333;
+    text-align: justify;}
+@media (min-width: 1500px) {
+.common_2col .col .detail p {
+    font-size: 15px;}
+}
+@media (max-width: 700px) {
+.common_2col .col .detail p {
+    font-size: 4vw;}
+}
+/* ==========================================================
+   テーブルスタイル (tbr / sp_tbr)
+   ========================================================== */
+.tbr {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 0.1vw solid #dcdcdc;
+    margin-bottom: 5vw;
+    background-color: #ffffff;}
+@media (min-width: 1500px) {
+.tbr {
+    border: 1.5px solid #dcdcdc;
+    margin-bottom: 75px;}
+}
+/* ヘッダーセルの設定 */
+.tbr th {
+    background-color: #f7f7f7;
+    color: #333333;
+    font-weight: normal;
+    text-align: left;
+    vertical-align: middle;
+    padding: 2.5vw;
+    border: 0.1vw solid #dcdcdc;
+    font-size: 1.1vw;}
+@media (min-width: 1500px) {
+.tbr th {
+    padding: 37.5px;
+    border: 1.5px solid #dcdcdc;
+    font-size: 16.5px;}
+}
+/* データセルの設定 */
+.tbr td {
+    padding: 2.5vw;
+    border: 0.1vw solid #dcdcdc;
+    color: #333333;
+    font-size: 1.1vw;
+    line-height: 1.8;}
+@media (min-width: 1500px) {
+.tbr td {
+    padding: 37.5px;
+    border: 1.5px solid #dcdcdc;
+    font-size: 16.5px;}
+}
+/* ==========================================================
+   リスト (ul / li) スタイル
+   ========================================================== */
+.tbr td ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;}
+.tbr td ul li {
+    position: relative;
+    padding-left: 1.5vw;
+    margin-bottom: 1vw;}
+@media (min-width: 1500px) {
+.tbr td ul li {
+    padding-left: 22.5px;
+    margin-bottom: 15px;}
+}
+.tbr td ul li:last-child {
+    margin-bottom: 0;}
+/* カスタム箇条書きドット（画像準拠のグレー） */
+.tbr td ul li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.7em;
+    width: 0.4vw;
+    height: 0.4vw;
+    background-color: #a0a0a0;
+    border-radius: 50%;}
+@media (min-width: 1500px) {
+.tbr td ul li::before {
+    width: 6px;
+    height: 6px;}
+}
+@media (max-width: 700px) {
+.sp_tbr, .sp_tbr tbody, .sp_tbr tr, 
+.sp_tbr th, .sp_tbr td {
+    display: block;
+    width: 100% !important;
+    box-sizing: border-box;}
+.sp_tbr th {
+    padding: 3vw 4vw;
+    background-color: #f2f2f2;
+    border-bottom: none;
+    font-size: 3.8vw;
+    font-weight: bold;}
+.sp_tbr td {
+    padding: 5vw 4vw;
+    font-size: 3.5vw;}
+.sp_tbr td ul li {
+    padding-left: 5vw;
+    margin-bottom: 3vw;}
+.sp_tbr td ul li::before {
+    width: 1.5vw;
+    height: 1.5vw;
+    top: 0.6em;}
+}
+/* ==========================================================
+   CTAブロック (Relaxation Contact Area)
+   ========================================================== */
+.cta-block .reading {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;}
+.cta-block {
+    width: 100%;
+    margin-top: 5vw;
+    margin-bottom: 8vw;}
+@media (min-width: 1500px) {
+.cta-block {
+    margin-top: 75px;
+    margin-bottom: 120px;}
+}
+/* 外枠と背景パターン */
+.f_contact {
+    width: 80vw;
+    margin: 0 auto;
+    padding: 4vw 2vw;
+    border: 1px solid #b39756;
+    background-color: #f9f9f9;
+    text-align: center;
+    box-sizing: border-box;}
+@media (min-width: 1500px) {
+.f_contact {
+    width: 1200px;
+    padding: 60px 30px;}
+}
+@media (max-width: 700px) {
+.f_contact {
+    width: 90vw;
+    padding: 8vw 4vw;}
+}
+/* 見出し：明朝体 */
+.f_contact h2 {
+    margin-top: 0;
+    margin-bottom: 2vw;
+    font-family: "Shippori Mincho", "YuMincho", "MS PMincho", serif;
+    font-size: 2.2vw;
+    font-weight: 500;
+    color: #333333;
+    letter-spacing: 0.1em;}
+@media (min-width: 1500px) {
+.f_contact h2 {
+    margin-bottom: 30px;
+    font-size: 33px;}
+}
+@media (max-width: 700px) {
+.f_contact h2 {
+    font-size: 5vw;
+    margin-bottom: 4vw;
+    line-height: 1.4;}
+}
+.fcon .tel {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;}
+.fcon .tel a {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: #b39756;
+    font-size: 3.5vw;
+    font-weight: 500;
+    line-height: 1;
+    margin-bottom: 0.8vw;
+    transition: opacity 0.3s;}
+@media (min-width: 1500px) {
+.fcon .tel a {
+    font-size: 52.5px;
+    margin-bottom: 12px;}
+}
+@media (max-width: 700px) {
+.fcon .tel a {
+    font-size: 8vw;
+    margin-bottom: 2vw;}
+}
+.fcon .tel a:hover {
+    opacity: 0.7;}
+.fcon .tel a::before {
+    content: "";
+    display: inline-block;
+    width: 2.2vw;
+    height: 2.2vw;
+    margin-right: 0.8vw;
+    background-color: #b39756;
+    -webkit-mask: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z'/%3E%3C/svg%3E") no-repeat center / contain;
+    mask: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z'/%3E%3C/svg%3E") no-repeat center / contain;}
+@media (min-width: 1500px) {
+.fcon .tel a::before {
+    width: 33px;
+    height: 33px;
+    margin-right: 12px;}
+}
+@media (max-width: 700px) {
+.fcon .tel a::before {
+    width: 5vw;
+    height: 5vw;
+    margin-right: 2vw;}
+}
+.fcon .tel span:not(.reading) {
+    font-size: 0.9vw;
+    color: #666666;
+    letter-spacing: 0.05em;}
+@media (min-width: 1500px) {
+.fcon .tel span:not(.reading) {
+    font-size: 13.5px;}
+}
+@media (max-width: 700px) {
+.fcon .tel span:not(.reading) {
+    font-size: 3vw;}
+}
+
+/* ==========================================================================
+   スライダーCSS化
+   ========================================================================== */
+.slider {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: center;
+    gap:2vw;}
+.slider .slides{
+    width: 30%;
+	display: inline-block;}
+.slider .slick-prev,
+.slider .slick-next,
+.slider .slick-prev::before,
+.slider .slick-next::before {
+    display: none;}
+@media screen and (max-width: 700px) {
+.slider {gap:5vw;}
+.slider .slides{width: 45%;}
+}

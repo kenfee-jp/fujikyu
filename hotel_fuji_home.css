@@ -1,0 +1,1542 @@
+/* ==========================================================
+   Base Styles
+   ========================================================== */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Shippori Mincho", "YuMincho", serif;
+    color: #333333;}
+img {
+    width: 100%;
+    height: auto;
+    display: block;}
+/* ==========================================================
+   Font Families
+   ========================================================== */
+.notoserif {
+    font-family: "Noto Serif JP", serif;}
+.yumiin {
+    font-family: "Yu Mincho", "YuMincho", serif;}
+/* ==========================================================
+   Header
+   ========================================================== */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.33vw 4vw;
+    background-color: #ffffff;
+    box-sizing: border-box;  
+    position: fixed;
+    top:0;
+    width:100%;
+    z-index:100;}
+header .logo {
+    width: 16vw;
+    margin: 0;}
+header .logo a {
+    display: block;
+    text-indent: -9999px;
+    background-image: url('https://www.mtfuji-hotel.com/_common/img/logo.svg'); /* 画像のロゴパス */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: left center;
+    height: 4.66vw;}
+header .head_r ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 2.66vw;}
+header .head_r ul li a {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #003087;}
+header .head_r ul li a span:first-child {
+    font-size: 1.5vw;
+    letter-spacing: 0.1em;}
+header .head_r ul li a .en {
+    font-size: 1vw;
+    font-family: "Garamond", serif;
+    margin-top: 0.2vw;
+    opacity: 0.7;}
+/* ==========================================================
+   Page Hero
+   ========================================================== */
+.page_hero {
+    position: relative;
+    width: 100%;
+    height: 20vw;
+    overflow: hidden;
+    margin-top:6vw;}
+@media screen and (max-width:700px){.page_hero{margin-top:30vw;}}
+.page_hero .img {
+    margin: 0;
+    width: 100%;
+    height: 100%;}
+.page_hero .img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;}
+.page_hero .inner {
+    position: absolute;
+    top: 2vw;
+    left: 2vw;
+    z-index: 2;}
+.breadcrumb {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1vw 0;}
+.breadcrumb li {
+    font-size: 1.1vw;
+    color: #ffffff;
+    letter-spacing: 0.05em;}
+.breadcrumb li a {
+    color: #ffffff;
+    text-decoration: none;
+    border-bottom: 0.1vw solid #ffffff;}
+.breadcrumb li:not(:last-child)::after {
+    content: "/";
+    margin: 0 0.8vw;
+    color: #ffffff;}
+.page_hero .tit {
+    color: #ffffff;
+    font-size: 3.5vw;
+    font-weight: normal;
+    margin: 0;
+    margin-top:5vw;
+    letter-spacing: 0.2em;
+    text-shadow: 0 0 0.66vw rgba(0, 0, 0, 0.3);}
+/* ==========================================================
+   Main Visual (top_main) - パララックス設定
+   ========================================================== */
+.top_main {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    clip-path: inset(0 0 0 0);}
+#movie {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;}
+#movie video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;}
+/* ==========================================================
+   コンセプトエリア
+   ========================================================== */
+.concept {
+    position: relative;
+    color: #ffffff;
+	margin-top: 5vw;
+    padding-top: 10vw;
+    padding-bottom: 10vw;
+    background-color: #003087;
+    background-image: url("https://www.mtfuji-hotel.com/_img/bg_concept.png");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: contain;
+    z-index: 2;}
+.concept .inner {
+    width: 90vw;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;}
+.concept .txt {
+    width: 45vw;}
+.concept h2 {
+    margin-top: 0;
+    margin-bottom: 3vw;}
+.concept h2 .en {
+    display: block;
+    font-size: 5.3vw;
+    font-family: serif;
+    font-weight: normal;
+    line-height: 1;
+    margin-bottom: 0.5vw;}
+.concept h2 span:not(.en) {
+    display: block;
+    font-size: 1.6vw;
+    font-weight: normal;}
+.concept .lead {
+    font-size: 2.5vw;
+    line-height: 1.5;
+    margin-bottom: 3vw;
+    font-weight: normal;}
+.concept .intxt {
+    font-size: 1.3vw;
+    line-height: 2;
+    margin-bottom: 4vw;}
+/* 共通ボタンスタイル */
+.common_btn_s a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 16vw;
+    height: 3.5vw;
+    border: 1px solid #003087;
+    color: #003087;
+    text-decoration: none;
+    font-size: 1vw;
+    transition: background-color 0.3s;}
+.common_btn_s a:hover {
+    background-color: #003087;
+    color: #ffffff;}
+.common_btn_s a::after {
+    content: "→";
+    font-size: 1.2vw;}
+.common_btn_s.concept_btn a {
+    border: 1px solid #ffffff;
+    color: #ffffff;}
+.common_btn_s.concept_btn a:hover {
+    background-color: rgba(255, 255, 255, 0.1);}
+.concept .img {
+    width: 60vw;
+    height: 60vw;
+    margin: 0;
+    position: absolute;
+    right: 3vw;
+    top: -3vw;
+    z-index: -1;}
+/* --- Live Section --- */
+.live {
+    padding-bottom: 10vw;
+    background-color: 	#052970;}
+.live .inner {
+    width: 90vw;
+    padding-top:5vw;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+	flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;}
+/* Live テキストサークルデザイン */
+.live .txt {
+    width: 25vw;
+    height: 25vw;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 0 10px #ffffff;
+    animation: radiation 2s ease-out infinite;
+	color: #fff;}
+.live .txt::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -35%;
+    transform: translate(-50%, -50%);
+    border: 0.5px solid #ffffff;
+    width: 90vw;
+    height: 0;
+    pointer-events: none;}
+.live h3 .ico {
+    display: inline-flex;
+    align-items: center;
+    font-size: 3vw;
+    font-family: serif;
+    margin-bottom: 1vw;}
+.live h3 .ico::after {
+    content: "";
+    width: 0.8vw;
+    height: 0.8vw;
+    background-color: #ffffff;
+    border-radius: 50%;
+    margin-left: 0.8vw;
+    box-shadow: 0 0 10px #ffffff;
+    animation: radiation 2s ease-out infinite;}
+@keyframes radiation {
+    0% {box-shadow: 0 0 0px rgba(255, 255, 255, 1);}
+    100% {box-shadow: 0 0 100px rgba(255, 255, 255, 0);}
+}
+.live .txt p {
+    font-size: 1.06vw;
+    line-height: 1.6;
+    margin: 0;}
+.live .iframe {
+    width: 45vw;
+    margin-right: -3vw;
+    z-index: 2;}
+.live iframe {
+    width: 100%;
+    height: 25vw; /* 16:9=45:25 */
+    border: none;}
+/* ==========================================================
+   Spa Section
+   ========================================================== */
+.spa {
+    background-color: #ffffff;
+    padding-top: 10vw;
+    padding-bottom: 10vw;
+    overflow: hidden;}
+.spa .inner {
+    width: 90vw;
+    margin-left: auto;
+    margin-right: auto;}
+/* --- 見出し (h2) --- */
+.spa h2 {
+    text-align: center;
+    margin-bottom: 8vw;}
+.spa h2 .en {
+    display: block;
+    color: #003087;
+    font-size: 4vw;
+    font-family: serif;
+    line-height: 1.2;}
+.spa h2 span:not(.en) {
+    display: block;
+    color: #003087;
+    font-size: 1.2vw;
+    margin-top: 0.5vw;
+    letter-spacing: 0.2em;}
+/* --- カラムレイアウト (col_wrap) --- */
+.col_wrap {
+    display: flex;
+    flex-direction: column;}
+.spa .col {
+    position: relative;
+    width: 100%;
+    margin-bottom: 15vw;
+    display: block;
+    text-decoration: none;
+    color: inherit;}
+.spa .col:last-child {
+    margin-bottom: 0;}
+/* 画像エリア */
+.spa .col .img {
+    width: 80vw;
+    margin: 0;}
+.spa .col:nth-child(odd) .img {
+    margin-left: auto;}
+.spa .col .img img {
+    width: 100%;
+    height: auto;
+    display: block;}
+/* テキストボックス (重なり演出) */
+.spa .col .txt {
+    background-color: #333a4d;
+    color: #ffffff;
+    padding: 4vw 5vw 4vw 3vw;
+    position: absolute;
+    width: 35vw;
+    z-index: 2;
+    box-sizing: border-box;
+    box-shadow: 0 1vw 3vw rgba(0, 0, 0, 0.2);}
+/* 奇数番目：右下に配置 */
+.spa .col:nth-child(odd) .txt {
+    right: 5vw;
+    bottom: -5vw;}
+/* 偶数番目：左下に配置 */
+.spa .col:nth-child(even) .txt {
+    left: 5vw;
+    bottom: -5vw;}
+.spa .txt p:not(.tit) {
+    font-size: 1.1vw;
+    margin-bottom: 0.5vw;}
+.spa .txt .tit {
+    font-size: 2.2vw;
+    font-weight: normal;
+    margin-top: 0;
+    margin-bottom: 0;}
+/* 矢印アイコンの追加 */
+.spa .txt::after {
+    content: "→";
+    position: absolute;
+    right: 2vw;
+    bottom: 2vw;
+    font-size: 1.5vw;
+    color: #ffffff;
+    opacity: 0.8;}
+/* ==========================================================
+   Restaurant & Bar Section
+   ========================================================== */
+.restaurant {
+    background-color: #ffffff;
+    padding-top: 10vw;
+    padding-bottom: 10vw;
+    overflow: hidden;}
+.restaurant .inner {
+    width: 90vw;
+    margin-left: auto;
+    margin-right: auto;}
+/* --- 見出し (h2) --- */
+.restaurant h2 {
+    text-align: center;
+    margin-bottom: 8vw;}
+.restaurant h2 .en {
+    display: block;
+    color: #003087;
+    font-size: 4vw;
+    font-family: serif;
+    line-height: 1.2;}
+.restaurant h2 span:not(.en) {
+    display: block;
+    color: #003087;
+    font-size: 1.2vw;
+    margin-top: 0.5vw;
+    letter-spacing: 0.2em;}
+/* --- グリッドレイアウト (col_wrap) --- */
+.restaurant .col{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;}
+/* アシンメトリーな高さ調整（偶数番目を少し下げる） */
+.restaurant .col:nth-child(even) {
+    margin-top: 8vw;}
+.restaurant .col a {
+    width: 44vw;
+    margin-bottom: 5vw;
+    text-decoration: none;
+    color: inherit;
+    display: block;}
+/* 画像エリア */
+.restaurant .col .img {
+    margin-bottom: 2vw;
+    position: relative;
+    overflow: hidden;}
+.restaurant .col .img img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.6s ease;}
+.restaurant .col a:hover .img img {
+    transform: scale(1.05);}
+/* --- テキストエリア --- */
+.restaurant .txt {
+    position: relative;
+    padding-right: 3vw;}
+/* 食事タイプラベル (ご夕食等) */
+.restaurant .type {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5vw 0;
+    display: flex;
+    gap: 0.8vw;}
+.restaurant .type li {
+    font-size: 0.8vw;
+    border: 1px solid #cccccc;
+    padding: 0.2vw 0.8vw;
+    color: #666666;}
+.restaurant .intxt p:not(.tit) {
+    font-size: 0.95vw;
+    color: #666666;
+    margin-bottom: 0.5vw;}
+.restaurant .tit {
+    font-size: 1.8vw;
+    font-weight: normal;
+    margin: 0;
+    line-height: 1.4;
+    color: #333333;}
+/* 右側の矢印アイコン */
+.restaurant .txt::after {
+    content: "→";
+    position: absolute;
+    right: 0;
+    bottom: 0.5vw;
+    font-size: 1.2vw;
+    color: #003087;
+    transition: transform 0.3s;}
+.restaurant .col a:hover .txt::after {
+    transform: translateX(0.5vw);}
+/* ==========================================================
+   Main Visual Parallax (top_fixed)
+   ========================================================== */
+.top_fixed {
+    position: relative;
+    width: 100%;
+    height: 40vw;
+    overflow: hidden;
+    clip-path: inset(0 0 0 0);
+    background-color: #000;}
+.top_fixed .inner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;}
+.top_fixed .inner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;}
+/* ==========================================================
+   Room Section Layout
+   ========================================================== */
+.room_wrap {
+    background-color: #ffffff;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;}
+.rooms {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-top: 10vw;
+    padding-bottom: 10vw;}
+.rooms .inner {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 62.5%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(255, 255, 255, 1) 70%, rgba(255, 255, 255, 0) 100%);
+    background: url("https://www.mtfuji-hotel.com/_img/bg_rooms.jpg") no-repeat center center;
+	display: flex;
+    align-items: center;
+    padding-left: 5vw;
+    box-sizing: border-box;}
+.rooms .txt {
+    max-width: 25vw;}
+.rooms h2 {
+    margin-bottom: 3vw;}
+.rooms h2 .en {
+    display: block;
+    color: #003087;
+    font-size: 5.3vw;
+    font-family: serif;
+    line-height: 1.1;}
+.rooms h2 span:not(.en) {
+    display: block;
+    color: #003087;
+    font-size: 1vw;
+    letter-spacing: 0.2em;
+    margin-top: 0.5vw;}
+.rooms .txt p:not(.common_btn_s) {
+    font-size: 1.06vw;
+    line-height: 2;
+    color: #333333;
+    margin-bottom: 3vw;}
+/* --- Slider Area --- */
+.slider_wrap {
+    width: 100%;
+    padding-left: 35vw;
+    box-sizing: border-box;}
+.slider_wrap .slider {
+    margin-bottom: 2vw;}
+.slider_wrap .slider:last-child {
+    margin-bottom: 0;}
+.slider_wrap .slides {
+    padding: 0 1vw;
+    outline: none;}
+.slider_wrap .slides img {
+    width: 100%;
+    height: auto;
+    display: block;
+    box-shadow: 0 0.5vw 2vw rgba(0, 0, 0, 0.1);}
+/* ==========================================================
+   Facilities Section (col img_l)
+   ========================================================== */
+.col.img_l {
+    position: relative;
+    width: 100%;
+    background: linear-gradient(to left, #f4f6f8 0%, #f4f6f8 70%, #ffffff 50%, #ffffff 100%);
+    padding-top: 8vw;
+    padding-bottom: 8vw;
+	margin: 8vw auto;
+    overflow: hidden;}
+.col.img_l .inner {
+    width: 90vw;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;}
+/* --- テキストエリア --- */
+.col.img_l .txt {
+    width: 35vw;
+    z-index: 2;}
+.col.img_l h2 {
+    margin-top: 0;
+    margin-bottom: 3vw;
+    display: flex;
+    align-items: baseline;
+    gap: 1.5vw;}
+/* 英語タイトル (Facilities) */
+.col.img_l h2 .en {
+    color: #003087;
+    font-size: 5.3vw;
+    font-family: serif;
+    line-height: 1;}
+/* 日本語サブタイトル (施設案内) */
+.col.img_l h2 span:not(.en) {
+    color: #003087;
+    font-size: 1vw;
+    letter-spacing: 0.2em;}
+.col.img_l .txt p:not(.common_btn_s) {
+    font-size: 1.06vw;
+    line-height: 2;
+    color: #333333;
+    margin-bottom: 3.5vw;}
+/* --- 画像エリア --- */
+.col.img_l .img {
+    width: 50vw;
+    margin: 0;
+    box-shadow: 0 1vw 3vw rgba(0, 0, 0, 0.1);}
+.col.img_l .img img {
+    width: 100%;
+    height: auto;
+    display: block;}
+/* ==========================================================
+   Main Layout
+   ========================================================== */
+.wrapper .main {
+    width: 90vw;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 5vw;
+    padding-bottom: 5vw;}
+.wrapper .main .block {
+    margin-bottom: 8vw;}
+/* --- ページナビゲーション (pagenav) --- */
+.pagenav {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin: 0;}
+.pagenav li {
+    width: 25%; /* col4 */
+    box-sizing: border-box;
+    border-right: 0.1vw solid #dddddd;
+	margin-bottom:3vw;}
+.pagenav li:first-child,.pagenav li:nth-child(5){
+	border-left: 0.1vw solid #dddddd;}
+.pagenav li a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2vw 1.5vw;
+    text-decoration: none;
+    color: #333333;
+    font-size: 1.4vw;
+    transition: background-color 0.3s;}
+.pagenav li a:hover {
+    background-color: #f9f9f9;
+    opacity: 0.8;}
+/* ナビ内の矢印アイコン */
+.pagenav li a::after {
+    content: "";
+    width: 0.8vw;
+    height: 0.8vw;
+    border-right: 0.15vw solid #003087;
+    border-bottom: 0.15vw solid #003087;
+    transform: rotate(45deg);
+    display: block;}
+/* --- 見出し (h2) --- */
+.wrapper .main h2 {
+    color: #003087;
+    font-size: 2.2vw;
+    font-weight: normal;
+    padding-top: 3vw;
+    margin-top: 0;
+    margin-bottom: 4vw;
+    border-top: 0.2vw solid #003087;
+    letter-spacing: 0.1em;}
+/* --- コンテンツエリア (common_block) --- */
+.wrapper .main .common_block img {
+    max-width: 100%;
+    height: auto;
+    display: inline-block;}
+.wrapper .main .common_block p {
+    text-align: left;
+    margin-top: 3vw;}
+.wrapper .main .common_block a {
+    color: #003087;
+    text-decoration: underline;
+    transition: opacity 0.3s;}
+.wrapper .main .common_block a:hover {
+    opacity: 0.7;}
+.common_block {
+    margin-bottom: 3vw;
+    line-height: 1.8;
+    color: #333333;}
+.common_block h3 {
+    display: flex;
+    align-items: center;
+    color: #003087; /* ホテルマウント富士のネイビー */
+    font-size: 1.6vw;
+    font-weight: normal;
+    margin-top: 0;
+    margin-bottom: 2vw;
+    position: relative;
+    padding-left: 2.5vw;}
+.common_block h3::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1.5vw;
+    height: 0.15vw;
+    background-color: #003087;}
+.common_block ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;}
+.common_block li {
+    position: relative;
+    padding-left: 1.5vw;
+    margin-bottom: 0.8vw;
+    font-size: 1.3vw;}
+.common_block li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.7em;
+    width: 0.4vw;
+    height: 0.4vw;
+    background-color: #003087;
+    border-radius: 50%;}
+.common_block span {
+    display: inline-block;
+    line-height: 1.8;}
+/* クリアフィックス対応 */
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;}
+/* ==========================================================
+   施設概要テーブル (tbr_type01)
+   ========================================================== */
+.tbr_type01 {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 0.1vw solid #dcdcdc;
+    background-color: #ffffff;}
+.tbr_type01 th {
+    background-color: #f4f6f8;
+    color: #333333;
+    font-weight: bold;
+    text-align: left;
+    vertical-align: middle;
+    padding: 2.5vw 2vw;
+    border: 0.1vw solid #dcdcdc;
+    font-size: 1.4w;
+    width: 25%;}
+.tbr_type01 td {
+    padding: 2.5vw 2vw;
+    border: 0.1vw solid #dcdcdc;
+    color: #333333;
+	text-align: left;
+    font-size: 1.4vw;
+    line-height: 1.6;
+    background-color: #ffffff;}
+/* ==========================================================
+   Common Tit Section (Pet Hotel Intro)
+   ========================================================== */
+.common_tit {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    padding: 4vw 0;
+    margin-bottom: 5vw;}
+.common_tit::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 80%;
+    height: 100%;
+    background-color: #f4f6f8;
+    z-index: 1;}
+.common_tit .txt {
+    width: 40%;
+    position: relative;
+    z-index: 2;
+    padding-right: 5vw;}
+.common_tit h2 {
+    color: #003087;
+    font-size: 2.2vw;
+    font-family: serif;
+    margin-top: 0;
+    margin-bottom: 2vw;
+    font-weight: normal;}
+.common_tit .txt div {
+    font-size: 1.06vw;
+    line-height: 2;
+    color: #333333;
+    margin-bottom: 0.5vw;}
+.common_tit .img {
+    width: 50%;
+    position: relative;
+    z-index: 2;
+    margin: 0;}
+.common_tit .img img {
+    width: 100%;
+    height: 30vw;
+    object-fit: cover;
+    display: block;
+    box-shadow: 0 1vw 3vw rgba(0, 0, 0, 0.1);}
+/* ==========================================================
+   Common Slider Section
+   ========================================================== */
+.common_slider {
+    width: 80vw;
+    margin: 0 auto 10vw;
+    position: relative;}
+.slider {
+    margin-bottom: 2vw;
+    position: relative;}
+.slider .slides img {
+    width: 100%;
+    height: auto;}
+.common_slider .slick-prev,
+.common_slider .slick-next {
+    position: absolute;
+    top: 50%;
+    width: 4vw;
+    height: 4vw;
+    background-color: #333a4d;
+    border: none;
+    z-index: 10;
+    cursor: pointer;
+    transform: translateY(-50%);}
+.common_slider .slick-prev {
+    left: -6vw;}
+.common_slider .slick-next {
+    right: -6vw;}
+.common_slider .slick-prev::before,
+.common_slider .slick-next::before {
+    content: "";
+    display: block;
+    width: 1vw;
+    height: 1vw;
+    border-top: 2px solid #ffffff;
+    border-left: 2px solid #ffffff;
+    margin: auto;}
+.common_slider .slick-prev::before {
+    transform: rotate(-45deg);
+    margin-left: 1.5vw;}
+.common_slider .slick-next::before {
+    transform: rotate(135deg);
+    margin-right: 1.5vw;}
+.thum {
+    display: flex;
+    justify-content: center;
+    gap: 1vw;}
+.thum_slides {
+    width: 33.333%;
+    padding: 0 0.5vw;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 0.3s;}
+.thum_slides img {
+    width: 100%;
+    height: 10vw;
+    object-fit: cover;}
+.thum_slides .slick-initialized .slick-slide{
+    width: 15vw!important;}
+.thum_slides.slick-current {
+    opacity: 1;}
+
+
+/* ==========================================================
+   Link Style
+   ========================================================== */
+.common_cv{
+	text-align: center;}
+.tel {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    border: 1px solid #003087;
+	margin: 0 auto 3vw;
+	padding: 2vw 4vw;
+    color: #003087;
+    font-size: 1.2vw;
+    line-height: 1.5;}
+.tel .num {
+    display: block;
+    font-size: 2.7vw;
+    font-family: "Playfair Display", serif;
+    font-weight: normal;
+    letter-spacing: 0.05em;
+    line-height: 1.1;
+    margin-bottom: 0.33vw;}
+.common_btn {
+	text-align: center!important;
+    margin: 2vw;}
+.common_btn a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    height: auto;
+    padding: 1vw 5vw;
+    border: 1px solid #003087;
+    background-color: #ffffff;
+    color: #003087;
+    text-decoration: none!important;
+    font-size: 1.4vw;
+    font-family: "Shippori Mincho", serif;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    position: relative;}
+.common_btn a:hover {
+	opacity: 0.7;}
+.common_btn a::after {
+    content: "→";
+    font-size: 1.2vw;
+    margin-left: 1vw;
+    transition: transform 0.3s;}
+.common_btn a:hover::after {
+    transform: translateX(0.33vw);}
+
+/* ==========================================================
+   Media Queries
+   ========================================================== */
+/* --- Mobile (under 700px) --- */
+@media screen and (max-width: 700px) {
+header {
+    flex-direction: column;
+    padding: 4vw;}
+header .logo {
+    width: 40vw;
+    margin-bottom: 4vw;}
+header .logo a {
+    height: 10vw;
+    background-position: center;}
+header .head_r ul {
+    gap: 4vw;
+    flex-wrap: wrap;
+    justify-content: center;}
+header .head_r ul li a span:first-child {
+    font-size: 3vw;}
+header .head_r ul li a .en {
+    font-size: 2vw;}
+.sp_none {
+    display: none !important;}
+.page_hero {
+    height: 40vw;}
+.page_hero .inner {
+    bottom: 5vw;
+    left: 5vw;}
+.breadcrumb li {
+    font-size: 3vw;}
+.page_hero .tit {
+    font-size: 8vw;}
+.inner {
+    width: 92vw;
+    flex-direction: column;}
+.top_main{
+    height:100vw;}
+.concept {
+    margin-top: 0;
+    padding-top: 15vw;
+    padding-bottom: 15vw;
+    height: 250vw;}
+.concept .txt {
+    width: 100%;
+    margin-bottom: 10vw;}
+.concept h2 .en {
+    font-size: 12vw;}
+.concept h2 span:not(.en) {
+    font-size: 3.5vw;}
+.concept .lead {
+    font-size: 5.5vw;
+    margin-bottom: 6vw;}
+.concept .intxt {
+    font-size: 3.4vw;
+    margin-bottom: 8vw;}
+.common_btn_s a {
+    width: 60vw;
+    height: 12vw;
+    font-size: 4vw;}
+.concept .img {
+    width: 100%;
+    top: 145vw;}
+.live .inner {
+    flex-direction: column;}
+.live .txt {
+    width: 70vw;
+    height: 70vw;
+    margin-top: 10vw;}
+.live h3 .ico {
+    font-size: 10vw;}
+.live h3 .ico::after {
+    width: 2.5vw;
+    height: 2.5vw;}
+.live .txt p {
+    font-size: 3.8vw;}
+.live .iframe {
+    width: 100%;
+    margin-right: 0;
+    margin-top: -10vw;}
+.live iframe {
+    height: 52vw;}
+.spa {
+    padding-top: 15vw;
+    padding-bottom: 15vw;}
+.spa .inner {
+    width: 92vw;}
+.spa h2 .en {
+    font-size: 10vw;}
+.spa h2 span:not(.en) {
+    font-size: 3.5vw;}
+.spa .col {
+    margin-bottom: 10vw;}
+.spa .col .img {
+    width: 100%;}
+.spa .col .txt {
+    position: relative;
+    width: 90%;
+    margin-top: -10vw;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 8vw 12vw 8vw 6vw;
+    bottom: auto !important;
+    right: auto !important;
+    left: auto !important;
+    box-shadow: 0 5vw 10vw rgba(0, 0, 0, 0.1);}
+.spa .txt p:not(.tit) {
+    font-size: 3.5vw;}
+.spa .txt .tit {
+    font-size: 5.5vw;}
+.spa .txt::after {
+    font-size: 5vw;
+    right: 4vw;
+    bottom: 4vw;}
+.restaurant {
+    padding-top: 15vw;
+    padding-bottom: 15vw;}
+.restaurant .inner {
+    width: 92vw;}
+.restaurant h2 .en {
+    font-size: 10vw;}
+.restaurant h2 span:not(.en) {
+    font-size: 3.5vw;}
+.restaurant .col {
+    width: 100%;
+    margin-bottom: 12vw;}
+.restaurant .col:nth-child(even) {
+    margin-top: 0;}
+.restaurant .col .img {
+    margin-bottom: 4vw;}
+.restaurant .type {
+    flex-wrap: wrap;
+    gap: 2vw;
+    margin-bottom: 3vw;}
+.restaurant .type li {
+    font-size: 3vw;
+    padding: 1vw 3vw;}
+.restaurant .intxt p:not(.tit) {
+    font-size: 2.8vw;}
+.restaurant .tit {
+    font-size: 4vw;}
+.restaurant .txt::after {
+    font-size: 5vw;}
+.restaurant .btn {
+    max-width: 100%;
+    margin-top: 8vw;}
+.restaurant .allergy a {
+    padding: 6vw;
+    font-size: 4vw;}
+.restaurant .allergy a::before {
+    width: 10vw;
+    height: 10vw;}
+.top_fixed {
+    height: 60vw;}
+.room_wrap {
+    padding-top: 15vw;
+    padding-bottom: 15vw;}
+.rooms {
+    flex-direction: column;}
+.rooms .inner {
+    position: relative;
+    width: 100%;
+    height: auto;
+    background: #ffffff;
+    padding: 0 4vw 10vw 4vw;}
+.rooms .txt {
+    max-width: 100%;}
+.rooms h2 .en {
+    font-size: 12vw;}
+.rooms h2 span:not(.en) {
+    font-size: 3.5vw;}
+.rooms .txt p:not(.common_btn_s) {
+    font-size: 3.8vw;}
+.common_btn_s a {
+    width: 60vw;
+    height: 12vw;
+    font-size: 4vw;
+    padding: 0 4vw;}
+.slider_wrap {
+    padding-left: 0;
+    margin-top: 5vw;}
+.slider_wrap .slides {
+    padding: 0 2vw;}
+.col.img_l {
+    padding-top: 15vw;
+    padding-bottom: 15vw;
+    background: #f4f6f8;}
+.col.img_l .inner {
+    width: 92vw;
+    flex-direction: column;}
+.col.img_l .img {
+    width: 100%;
+    margin-bottom: 8vw;}
+.col.img_l .txt {
+    width: 100%;
+    padding: 0 4vw;
+    box-sizing: border-box;}
+.col.img_l h2 {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2vw;
+    margin-bottom: 5vw;}
+.col.img_l h2 .en {
+    font-size: 12vw;}
+.col.img_l h2 span:not(.en) {
+    font-size: 3.5vw;}
+.col.img_l .txt p:not(.common_btn_s) {
+    font-size: 3.8vw;
+    margin-bottom: 8vw;}
+.common_btn_s a {
+    width: 60vw;
+    height: 12vw;
+    font-size: 4vw;
+    padding-left: 4vw;
+    padding-right: 4vw;}
+.common_btn_s a::after {
+    font-size: 5vw;}
+.wrapper .main  {
+    width: 92vw;
+    padding-top: 10vw;}
+.pagenav li {
+    width: 50%;}
+.pagenav li a {
+    padding: 4vw 3vw;
+    font-size: 3.5vw;}
+.pagenav li a::after {
+    width: 2.5vw;
+    height: 2.5vw;
+    border-right-width: 0.4vw;
+    border-bottom-width: 0.4vw;}
+.wrapper .main h2 {
+    font-size: 6vw;
+    padding-top: 6vw;
+    margin-bottom: 8vw;
+    border-top-width: 0.8vw;}
+.wrapper .main .common_block p {
+    margin-top: 6vw;
+    font-size: 3.4vw;}
+.wrapper .main .common_block span[style*="font-size: 14pt"] {
+    font-size: 4vw !important;}
+.sp_tbr,.sp_tbr tbody,
+.sp_tbr tr,.sp_tbr th,.sp_tbr td {
+    display: block;
+    width: 100% !important;
+    box-sizing: border-box;}
+.sp_tbr th {
+    padding: 3vw 4vw;
+    background-color: #f4f6f8;
+    border-bottom: none;
+    font-size: 3.8vw;}
+.sp_tbr td {
+    padding: 4vw;
+    font-size: 3.5vw;
+    border-top: none;}
+.common_tit {
+    flex-direction: column;
+    padding: 10vw 4vw;
+    font-size: 3.4vw;
+    line-height: 1.8;}
+.common_tit::before {
+    width: 90%;
+    height: 25%;
+    bottom: 10vw;
+    top: auto;}
+.common_tit .img {
+    width: 100%;
+    margin-top: 5vw;
+    margin-bottom: 5vw;}
+.common_tit .txt {
+    width: 100%;
+    padding: 0 4vw;
+    box-sizing: border-box;}
+.common_tit h2 {
+    font-size: 6vw;
+    margin-bottom: 4vw;}
+.common_tit .txt div {
+    font-size: 3.4vw;}
+.common_slider {
+    width: 90vw;}
+.common_slider .slick-prev,
+.common_slider .slick-next {
+    width: 10vw;
+    height: 10vw;}
+.common_slider .slick-prev {
+    left: 2vw;}
+.common_slider .slick-next {
+    right: 2vw;}
+.common_slider .slick-prev::before,
+.common_slider .slick-next::before {
+    width: 3vw;
+    height: 3vw;}
+.common_block {
+    margin-bottom: 10vw;}
+.common_block h3 {
+    font-size: 5.5vw;
+    margin-bottom: 5vw;
+    padding-left: 8vw;}
+.common_block h3::before {
+    width: 5vw;
+    height: 0.6vw;}
+.common_block li {
+    padding-left: 6vw;
+    margin-bottom: 1vw;
+    font-size: 3.4vw;}
+.common_block li::before {
+    width: 1.5vw;
+    height: 1.5vw;}
+.common_block span[style*="font-size"] {
+    font-size: 3.4vw !important;}
+.tel {
+    font-size: 3.2vw;
+    margin-bottom:10vw;}
+.tel .num {
+    font-size: 8vw;
+    margin-bottom: 1vw;}
+.common_btn a {
+    width: 70vw;
+    height: 14vw;
+    font-size: 4vw;
+    padding-left: 5vw;
+    padding-right: 5vw;}
+.common_btn a::after {
+    font-size: 5vw;}
+.thum_slides img {
+    height: 15vw;}
+}
+/* --- Desktop Fixed (over 1500px) --- */
+@media screen and (min-width: 1500px) {
+header {
+    padding: 20px 60px;}
+header .logo {
+    width: 240px;}
+header .logo a {
+    height: 70px;}
+header .head_r ul {
+    gap: 40px;}
+header .head_r ul li a span:first-child {
+    font-size: 16px;}
+header .head_r ul li a .en {
+    font-size: 11px;}
+.page_hero {
+    height: 225px;}
+.page_hero .inner {
+    bottom: 30px;
+    left: 60px;}
+.breadcrumb li {
+    font-size: 12px;}
+.page_hero .tit {
+    font-size: 40px;}
+.inner {
+    width: 1350px;}
+.concept .txt {
+    width: 675px;}
+.concept h2 {
+    margin-bottom: 45px;}
+.concept h2 .en {
+    font-size: 80px;}
+.concept h2 span:not(.en) {
+    font-size: 15px;}
+.concept .lead {
+    font-size: 31.5px;
+    margin-bottom: 45px;}
+.concept .intxt {
+    font-size: 16px;
+    margin-bottom: 60px;}
+.common_btn_s a {
+    width: 240px;
+    height: 52.5px;
+    font-size: 15px;}
+.live {
+    padding-bottom: 150px;}
+.live .txt {
+    width: 375px;
+    height: 375px;}
+.live .txt::after {
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;}
+.live h3 .ico {
+    font-size: 45px;}
+.live h3 .ico::after {
+    width: 12px;
+    height: 12px;
+    margin-left: 12px;}
+.live .txt p {
+    font-size: 16px;}
+.live .iframe {
+    width: 825px;}
+.live iframe {
+    height: 465px;}
+.spa {
+    padding-top: 150px;
+    padding-bottom: 150px;}
+.spa .inner {
+    width: 1350px;}
+.spa h2 {
+    margin-bottom: 120px;}
+.spa h2 .en {
+    font-size: 60px;}
+.spa h2 span:not(.en) {
+    font-size: 18px;}
+.spa .col {
+    margin-bottom: 225px;}
+.spa .col .img {
+    width: 1200px;}
+.spa .col .txt {
+    padding: 60px 75px 60px 45px;
+    width: 525px;
+    bottom: -75px;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);}
+.spa .txt p:not(.tit) {
+    font-size: 16.5px;}
+.spa .txt .tit {
+    font-size: 33px;}
+.spa .txt::after {
+    right: 30px;
+    bottom: 30px;
+    font-size: 22.5px;}
+.restaurant {
+    padding-top: 150px;
+    padding-bottom: 150px;}
+.restaurant .inner {
+    width: 1350px;}
+.restaurant h2 {
+    margin-bottom: 120px;}
+.restaurant h2 .en {
+    font-size: 60px;}
+.restaurant h2 span:not(.en) {
+    font-size: 18px;}
+.restaurant .col a {
+    width: 660px;
+    margin-bottom: 150px;}
+.restaurant .col:nth-child(even) {
+    margin-top: 120px;}
+.restaurant .col .img {
+    margin-bottom: 30px;}
+.restaurant .type {
+    margin-bottom: 22.5px;
+    gap: 12px;}
+.restaurant .type li {
+    font-size: 12px;
+    padding: 3px 12px;}
+.restaurant .intxt p:not(.tit) {
+    font-size: 14.25px;}
+.restaurant .tit {
+    font-size: 27px;}
+.restaurant .txt::after {
+    font-size: 18px;}
+.restaurant .btn {
+    max-width: 675px;
+    margin-top: 75px;}
+.restaurant .allergy a {
+    padding: 45px;
+    font-size: 16.5px;}
+.restaurant .allergy a::before {
+    width: 37.5px;
+    height: 37.5px;
+    margin-bottom: 15px;}
+.top_fixed {
+    height: 600px;}
+.room_wrap {
+    padding-top: 150px;
+    padding-bottom: 150px;}
+.rooms .inner {
+    width: 675px;
+    padding-left: 75px;}
+.rooms .txt {
+    max-width: 480px;}
+.rooms h2 .en {
+    font-size: 80px;}
+.rooms h2 span:not(.en) {
+    font-size: 15px;}
+.rooms .txt p:not(.common_btn_s) {
+    font-size: 16px;}
+.common_btn_s a {
+    width: 240px;
+    height: 60px;
+    padding: 0 22.5px;
+    font-size: 16.5px;}
+.common_btn_s a::after {
+    font-size: 18px;}
+.slider_wrap .slider {
+    margin-bottom: 30px;}
+.slider_wrap .slides {
+    padding: 0 15px;}
+.col.img_l {
+    padding-top: 120px;
+    padding-bottom: 120px;
+    background: linear-gradient(to right, #f4f6f8 0%, #f4f6f8 50%, #ffffff 50%, #ffffff 100%);}
+.col.img_l .inner {
+    width: 1350px;}
+.col.img_l .txt {
+    width: 525px;}
+.col.img_l h2 {
+    margin-bottom: 45px;
+    gap: 22.5px;}
+.col.img_l h2 .en {
+    font-size: 80px;}
+.col.img_l h2 span:not(.en) {
+    font-size: 15px;}
+.col.img_l .txt p:not(.common_btn_s) {
+    font-size: 16px;
+    margin-bottom: 52.5px;}
+.common_btn_s a {
+    width: 240px;
+    height: 60px;
+    padding-left: 22.5px;
+    padding-right: 22.5px;
+    font-size: 16.5px;}
+.common_btn_s a::after {
+    font-size: 18px;}
+.col.img_l .img {
+    width: 750px;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.1);}
+.wrapper .main  {
+    width: 1350px;
+    padding-top: 75px;
+    padding-bottom: 75px;}
+.wrapper .main .block {
+    margin-bottom: 120px;}
+.pagenav {
+    border-top-width: 1.5px;
+    border-left-width: 1.5px;}
+.pagenav li {
+    border-right-width: 1.5px;
+    border-bottom-width: 1.5px;}
+.pagenav li a {
+    padding: 30px 22.5px;
+    font-size: 15px;}
+.pagenav li a::after {
+    width: 12px;
+    height: 12px;
+    border-right-width: 2px;
+    border-bottom-width: 2px;}
+.wrapper .main h2 {
+    font-size: 33px;
+    padding-top: 45px;
+    margin-bottom: 60px;
+    border-top-width: 3px;}
+.wrapper .main .common_block p {
+    margin-top: 45px;}
+.tbr_type01 {
+    border-width: 1.5px;}
+.tbr_type01 th {
+    padding: 37.5px 30px;
+    border-width: 1.5px;
+    font-size: 16.5px;}
+.tbr_type01 td {
+    padding: 37.5px 30px;
+    border-width: 1.5px;
+    font-size: 16.5px;}
+.common_tit {
+    padding: 120px 0;
+    margin-bottom: 75px;}
+.common_tit h2 {
+    font-size: 33px;
+    margin-bottom: 30px;}
+.common_tit .txt div {
+    font-size: 16px;}
+.common_slider {
+    width: 1200px;
+    margin-bottom: 150px;}
+.common_slider .slick-prev,
+.common_slider .slick-next {
+    width: 60px;
+    height: 60px;}
+.common_slider .slick-prev {
+    left: -90px;}
+.common_slider .slick-next {
+    right: -90px;}
+.common_slider .slick-prev::before,
+.common_slider .slick-next::before {
+    width: 15px;
+    height: 15px;}
+.common_slider .slick-prev::before {
+    margin-left: 22px;}
+.common_slider .slick-next::before {
+    margin-right: 22px;}
+.common_block {
+    margin-bottom: 75px;}
+.common_block h3 {
+    font-size: 24px;
+    margin-bottom: 30px;
+    padding-left: 37.5px;}
+.common_block h3::before {
+    width: 22.5px;
+    height: 2.25px;}
+.common_block li {
+    padding-left: 22.5px;
+    margin-bottom: 12px;
+    font-size: 16px;}
+.common_block li::before {
+    width: 6px;
+    height: 6px;}
+.tel {
+    font-size: 14px;}
+.tel .num {
+    font-size: 40px;
+    margin-bottom: 5px;}
+.common_btn {
+    margin: 30px 0;}
+.common_btn a {
+    width: 300px;
+    height: 70px;
+    padding-left: 25px;
+    padding-right: 25px;
+    font-size: 16px;}
+.common_btn a::after {
+    font-size: 18px;}
+}
+
+/* ==========================================================================
+  スライダーCSS化
+  ========================================================================== */
+.slider {
+   width: 100%;
+   position: relative;
+   overflow: hidden;
+   display: flex;
+   flex-wrap:wrap;
+   justify-content: center;
+   gap:3vw;}
+.slider .slides{
+   width: 25%;
+   display: inline-block;}
+.slider .slick-prev,
+.slider .slick-next,
+.slider .slick-prev::before,
+.slider .slick-next::before {
+   display: none;}
+@media screen and (max-width: 700px) {
+.slider {gap:2vw 0;}
+.slider .slides{width: 27%;}
+}

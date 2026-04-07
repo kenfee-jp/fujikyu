@@ -1,0 +1,383 @@
+/* ==========================================================================
+   Base Styles
+   ========================================================================== */
+body {
+    margin: 0;
+    padding: 0;
+    background: #000000;
+    color: #ffffff;
+    font-family: "Shippori Mincho", "YuMincho", "serif";
+    line-height: 1.6;
+    overflow-x: hidden;}
+img {
+    width: 100%;
+    height: auto;
+    display: block;}
+
+/* ==========================================================================
+   Hero Section (Parallax for iOS)
+   ========================================================================== */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    clip-path: inset(0 0 0 0);}
+.hero__media {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;}
+.hero__media iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    height: 56.25vw; /* 16:9 ratio */
+    min-height: 100vh;
+    min-width: 177.77vh;
+    transform: translate(-50%, -50%);
+    pointer-events: none;}
+.hero__scroll {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    width: 1px;
+    height: 60px;
+    background: #ffffff;
+    transform: translateX(-50%);
+}
+
+/* ==========================================================================
+   header
+   ========================================================================== */
+header {
+    background-color: #000000;
+    padding: 2vw 0;
+    width: 100%;
+    position: fixed;
+    top:0;
+    z-index: 100;}
+.head_r {
+    width: 100%;}
+.nav_btm ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;}
+.nav_btm li {
+    display: flex;
+    align-items: center;}
+.nav_btm a {
+    color: #ffffff;
+    text-decoration: none;
+    font-family: "Shippori Mincho", "YuMincho", serif;
+    font-size: 1.2vw;
+    margin: 0 1.5vw;
+    padding: 0.5vw 0;
+    display: block;
+    transition: color 0.3s;}
+.nav_btm a.selected {
+    color: #c9a063; /* 画像に基づいたゴールド系 */
+    border-bottom: 0.1vw solid #c9a063;
+    padding-bottom: 0.3vw;}
+.nav_btm li:not(:last-child)::after {
+    content: "|";
+    color: #ffffff;
+    font-size: 1vw;
+    font-weight: 100;
+    opacity: 0.6;}
+@media (max-width: 768px) {
+.sp_none {
+    display: block !important;}
+.nav_btm ul {
+    padding: 2vw 4vw;}
+.nav_btm li {
+    margin: 2vw 0;}
+.nav_btm a {
+    font-size: 3.8vw;
+    padding: 1vw 3vw;}
+.nav_btm li:not(:last-child)::after {
+    display: none;}
+.nav_btm a.selected {
+    border-bottom: 0.4vw solid #c9a063;}
+}
+
+
+/* ==========================================================================
+   Common Typography
+   ========================================================================== */
+.section-title {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    display: inline-block;
+    padding:0;
+    margin:0;
+    font-weight:lighter;
+    color: #DBBA6F;}
+.section-title__en {
+    display: block;
+    font-size: 3rem;
+    font-weight:lighter;
+    margin: 0;
+    font-family: serif;
+    color: #fff;}
+
+/* ==========================================================================
+   Concept Section
+   ========================================================================== */
+.concept {
+    position: relative;
+    padding: 1vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vw;
+    z-index: 0;}
+.concept::before{
+    display: block;
+    content: "";
+    background: rgba(66, 145, 186, .6);
+    z-index: -2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;}
+.concept__bg img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -3;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;}
+.concept__logo {
+    position: relative;
+    z-index: 2;
+    width: 25%;
+    margin: 0;}
+.concept__content {
+    position: relative;
+    z-index: 3;
+    padding: 3vw;
+    width: 100vw;}
+.concept__content .section-title{
+    display: flex;
+    align-items: center;
+    gap: 3vw;}
+.concept__lead {
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;}
+
+.concept__desc {
+    font-size: 0.95rem;
+    line-height: 2;
+    text-align: justify;
+}
+
+/* ==========================================================================
+   Scene Section
+   ========================================================================== */
+.scene {
+    background: #000000;
+    padding: 80px 0;
+    text-align: center;}
+.scene__title {
+    margin-bottom: 50px;}
+.scene__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 3vw;}
+.scene__col {
+    position: relative;
+    text-decoration: none;
+    z-index: 0;
+    color: #ffffff;
+    overflow: hidden;}
+.scene__col img {
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;}
+.scene__col:hover img {
+    transform: scale(1.05);}
+.scene__col::after{
+    display: block;
+    content:"";
+    position: absolute;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1;
+    top:0; left:0;
+    width: 100%; height: 100%;}
+.scene__col:hover::after {
+    background-color: rgba(0,0,0,0.7);}
+.scene__label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 15px 10px;
+    writing-mode: vertical-rl;
+    font-size: 0.8rem;
+    letter-spacing: 4px;
+    z-index: 2;
+    backdrop-filter: blur(5px); }
+.scene__body {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    z-index: 2;}
+.scene__main {
+    font-size: 1.8rem;
+    font-weight: bold;}
+
+/* ==========================================================================
+   Rooms & Dining Section
+   ========================================================================== */
+.rooms,.dining {
+    position: relative;
+    height: 85vh;
+    display: flex;
+    align-items: center;}
+.rooms__bg,.dining__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    margin-top: 0;}
+.rooms__bg img,.dining__bg img {
+    height: 100%;
+    object-fit: cover;}
+.rooms__inner,.dining__inner {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    display: flex;}
+.rooms__inner {
+    justify-content: flex-start;}
+.dining__inner {
+    justify-content: flex-end;}
+.rooms__info,.dining__info {
+    width: 30%;
+    padding: 3vw;
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;}
+.rooms__info {
+    background: #2CA1B6;
+    margin-left: 150px;}
+.dining__info {
+    background: #5CA243;
+    margin-right: 150px;}
+.rooms__link-title,.dining__link-title {
+    position: relative;
+    text-decoration: none;
+    color: #ffffff;}
+.rooms__link-title::before,.dining__link-title::before {
+    display: block;
+    content: "→";
+    width: 30px;
+    height: 30px;
+    font-size: 25px;
+    color: #fff;
+    position: absolute;
+    right: 0;
+    top: 5vh;}
+.rooms__link-title::after,.dining__link-title::after {
+    display: block;
+    content: "";
+    width: 25vw;
+    height: 1px;
+    background-color: #ccc;
+    position: absolute;
+    left: -3vw;
+    top: 14vh;}
+.rooms__text,.dining__text {
+    margin: 30px 0;
+    font-size: 0.9rem;
+    line-height: 2;}
+.rooms__list,.dining__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;}
+.rooms__item,.dining__item {
+    display: block;
+    padding: 5px 0;
+    margin-left: 20px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    position: relative;}
+.rooms__item::before,
+.dining__item::before {
+    content: '>';
+    position: absolute;
+    left: -20px;}
+
+/* ==========================================================================
+   Responsive (Mobile Settings)
+   ========================================================================== */
+@media (max-width: 768px) {
+.concept {
+    flex-direction: column;
+    padding: 60px 20px;
+    padding-top:150px;
+    height: 300vw;}
+.concept::before{
+    z-index:2;}
+.concept__bg {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    margin:0;}
+.concept__logo {
+    width: 60%;
+    margin: 0 0 30px 0;}
+.concept__content {
+    padding: 40px 20px;
+    max-width: 100%;}
+.scene__list {
+    grid-template-columns: 1fr;
+    margin-top: 13vw;}
+.rooms,.dining {
+    height: auto;
+    flex-direction: column;}
+.rooms__inner,
+.dining__inner {
+    flex-direction: column;}
+.rooms__info,
+.dining__info {
+    width: 100%;
+    min-width: 100%;
+    height: auto;
+    margin:0;
+    padding: 60px 20px;}
+.rooms__bg,
+.dining__bg {
+    position: relative;
+    height: auto;
+    margin-bottom:0;}
+.rooms__bg img, .dining__bg img{
+    height:auto;}
+.rooms__link-title::before, .dining__link-title::before{
+    right: 5vw;}
+.rooms__link-title::after, .dining__link-title::after{
+    top:15vh;
+    width: 85vw;}
+
+}

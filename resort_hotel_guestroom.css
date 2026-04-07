@@ -1,0 +1,950 @@
+/* ==========================================================================
+  Base Styles
+  ========================================================================== */
+body {
+  margin: 0;
+  padding: 0;
+  color: #ffffff;
+  font-family: "Shippori Mincho", "YuMincho", "serif";
+  line-height: 1.6;
+  overflow-x: hidden;}
+img {
+  width: 100%;
+  height: auto;
+  display: block;}
+
+/* ==========================================================================
+  header
+  ========================================================================== */
+header {
+  background-color: #000000;
+  padding: 2vw 0;
+  width: 100%;
+  position: fixed;
+  top:0;
+  z-index: 100;}
+.head_r {
+  width: 100%;}
+.nav_btm ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;}
+.nav_btm li {
+  display: flex;
+  align-items: center;}
+.nav_btm a {
+  color: #ffffff;
+  text-decoration: none;
+  font-family: "Shippori Mincho", "YuMincho", serif;
+  font-size: 1.2vw;
+  margin: 0 1.5vw;
+  padding: 0.5vw 0;
+  display: block;
+  transition: color 0.3s;}
+.nav_btm a.selected {
+  color: #c9a063; /* 画像に基づいたゴールド系 */
+  border-bottom: 0.1vw solid #c9a063;
+  padding-bottom: 0.3vw;}
+.nav_btm li:not(:last-child)::after {
+  content: "|";
+  color: #ffffff;
+  font-size: 1vw;
+  font-weight: 100;
+  opacity: 0.6;}
+
+/* ==========================================================================
+   Mount View Section
+   ========================================================================== */
+.mountview {
+  position: relative;
+  width: 100%;
+  padding: 4vw 0;
+  margin-top: 6vw;
+  background-image: url('https://www.highlandresort.co.jp/rooms/grandexecutive/_img/img_gef_rooms01.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #ffffff;
+  font-family: "Shippori Mincho", "YuMincho", serif;}
+.parkview {
+  position: relative;
+  width: 100%;
+  padding: 4vw 0;
+  background-image: url('https://www.highlandresort.co.jp/rooms/grandexecutive/_img/img_gef_rooms02.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #ffffff;
+  font-family: "Shippori Mincho", "YuMincho", serif;}
+.mountview::before {
+  content: "";
+  position: absolute;
+  top: 0;  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;}
+.parkview::before {
+  content: "";
+  position: absolute;
+  top: 0;  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;}
+.mountview__inner {
+  position: relative;
+  z-index: 2;
+  width: 92vw;
+  margin: 0 auto;}
+.mountview__header {
+  text-align: center;
+  margin-bottom: 6vw;}
+.mountview__header-en {
+  display: block;
+  font-size: 3.8vw;
+  font-weight: normal;
+  letter-spacing: 0.15em;
+  margin-bottom: 0.8vw;}
+.mountview__header-jp {
+  display: block;
+  font-size: 1.1vw;
+  color: #c9a063;
+  letter-spacing: 0.3em;}
+.mountview__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5vw; /* カード間の余白 */}
+.room-card {
+  display: flex;
+  align-items: center;
+  background: rgba(15, 15, 15, 0.85);
+  padding: 1.2vw;
+  text-decoration: none;
+  color: #ffffff;
+  /* 3カラム計算：(100% - 隙間1.5vw * 2) / 3 */
+  flex: 0 0 29.6vw; 
+  box-sizing: border-box;
+  transition: transform 0.3s, background 0.3s;
+  border: 0.1vw solid rgba(255, 255, 255, 0.1);}
+.room-card:hover {
+  background: rgba(30, 30, 30, 0.95);
+  transform: translateY(-0.3vw);}
+.room-card__img-wrap {
+  width: 7.5vw;
+  height: 7.5vw;
+  flex-shrink: 0;}
+.room-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;}
+.room-card__content {
+  flex: 1;
+  padding: 0 1.5vw;}
+.room-card__category {
+  font-size: 0.7vw;
+  opacity: 0.6;
+  margin-bottom: 0.4vw;}
+.room-card__name {
+  font-size: 1.3vw;
+  font-weight: normal;
+  margin-bottom: 0.8vw;}
+.room-card__capacity {
+  display: inline-block;
+  font-size: 0.8vw;
+  padding: 0.2vw 0.6vw;
+  border: 0.1vw solid rgba(255, 255, 255, 0.4);}
+.room-card__arrow {
+  font-size: 1.2vw;
+  opacity: 0.7;
+  padding-right: 0.5vw;}
+@media (max-width: 700px) {
+.sp_none {
+  display: block !important;}
+.nav_btm ul {
+  padding: 2vw 4vw;}
+.nav_btm li {
+  margin: 2vw 0;}
+.nav_btm a {
+  font-size: 3.8vw;
+  padding: 1vw 3vw;}
+.nav_btm li:not(:last-child)::after {
+  display: none;}
+.nav_btm a.selected {
+  border-bottom: 0.4vw solid #c9a063;}
+.room-card {
+  flex: 0 0 45vw;
+  padding: 2vw;}
+.room-card__img-wrap {
+  width: 12vw;
+  height: 12vw;}
+.room-card__name {
+  font-size: 2vw;}
+.room-card__capacity {
+  font-size: 1.2vw;}
+.mountview{
+  margin-top:30vw;}
+.mountview__inner {
+  width: 90vw;}
+.mountview__header-en {
+  font-size: 9vw;}
+.mountview__header-jp {
+  font-size: 3.5vw;}
+.mountview__container {
+  gap: 4vw;}
+.room-card {
+  flex: 0 0 100%;
+  padding: 4vw;}
+.room-card__img-wrap {
+  width: 22vw;
+  height: 22vw;}
+.room-card__content {
+  padding: 0 4vw;}
+.room-card__category {
+  font-size: 2.5vw;}
+.room-card__name {
+  font-size: 4vw;
+  margin-bottom: 2vw;}
+.room-card__capacity {
+  font-size: 2.8vw;
+  padding: 1vw 2vw;}
+.room-card__arrow {
+  font-size: 5vw;}
+}
+/* ==========================================================
+  ページタイトルエリア (page_tit)
+ ========================================================== */
+.page_tit {
+  position: relative;
+  width: 100%;
+  height: 30vw;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;}
+@media (min-width: 1500px) {
+.page_tit {
+  height: 450px;}
+}
+.page_tit .img {
+  position: absolute;
+  top: 0;  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  z-index: 1;}
+.page_tit .img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.6);}
+.page_tit .tit {
+  position: absolute;
+  top: 50%;  left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 3;}
+/* ==========================================================
+  スタンダードルーム メニューエリア
+ ========================================================== */
+.standard-room {
+  width: 100%;}
+.standard-room-menu {
+  width: 90vw;
+  margin: 0 auto;
+  padding: 5vw 0;}
+.standard-room-menu .alink {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-right: 0.1vw solid #dddddd;}
+.standard-room-menu .alink li {
+  width: 25%;
+  box-sizing: border-box;
+  margin-bottom: 3vw;
+  border-left: 0.1vw solid #dddddd;}
+.standard-room-menu .alink li a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2.5vw 1.5vw;
+  text-decoration: none;
+  color: #333333;
+  font-family: "Shippori Mincho", "YuMincho", serif;
+  font-size: 1vw;
+  line-height: 1.5;
+  transition: background-color 0.3s, color 0.3s;}
+.standard-room-menu .alink li a:hover {
+  background-color: #f9f9f9;
+  color: #c9a063;}
+.standard-room-menu .alink li a::after {
+  content: "↓";
+  color: #c9a063;
+  font-size: 1.2vw;
+  font-weight: normal;
+  margin-left: 1vw;}
+@media (min-width: 1500px) {
+.standard-room-menu {
+  width: 1350px;
+  padding: 75px 0;}
+.standard-room-menu .alink {
+  border-right: 1px solid #dddddd;}
+.standard-room-menu .alink li {
+  border-left: 1px solid #dddddd;}
+.standard-room-menu .alink li a {
+  padding: 37.5px 22.5px;
+  font-size: 15px;}
+.standard-room-menu .alink li a::after {
+  font-size: 18px;
+  margin-left: 15px;}
+}
+@media (max-width: 700px) {
+.standard-room-menu .alink li {
+  width: 50%;}
+.standard-room-menu .alink li a {
+  font-size: 3.2vw;
+  padding: 5vw 3vw;
+  min-height: 15vw;}
+.standard-room-menu .alink li a::after {
+  font-size: 4vw;
+  margin-left: 2vw;}
+}
+/* ==========================================================
+   Executive Room Overview
+  ========================================================== */
+.executive-room-feature {
+  background-color: #000000;
+  color: #ffffff;
+  font-family: "Shippori Mincho", "YuMincho", serif;
+  padding-top: 8vw;
+  padding-bottom: 8vw;
+  overflow: hidden;}
+.executive-room-wraper {
+  width: 90vw;
+  margin-left: auto;
+  margin-right: auto;}
+.executive-room-feature h2 {
+  text-align: center;
+  margin-bottom: 6vw;}
+.executive-col {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 5vw;}
+.executive-col .fadein {
+  width: 65vw;
+  position: relative;
+  z-index: 2;}
+.executive-col .fadein img {
+  width: 100%;
+  height: auto;
+  display: block;}
+.executive-col .bg_txt {
+  position: absolute;
+  right: 0;
+  bottom: -2vw;
+  font-size: 10vw;
+  line-height: 0.9;
+  color: rgba(255, 255, 255, 0.05);
+  z-index: 1;
+  text-align: right;
+  pointer-events: none;
+  font-family: serif;}
+.executive-room-txt {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40vw;
+  padding: 4vw;
+  background-color: rgba(30, 30, 30, 0.95);
+  z-index: 3;
+  box-sizing: border-box;
+  border-right: 0.2vw solid #c9a063;}
+.executive-room-txt h3 {
+  font-size: 1.8vw;
+  color: #c9a063;
+  margin-top: 0;
+  margin-bottom: 1.5vw;
+  font-weight: normal;}
+.executive-room-txt p {
+  font-size: 1vw;
+  line-height: 2;
+  text-align: justify;
+  margin: 0;}
+.executive-image-list {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  padding: 0;
+  margin: 0;}
+.executive-image-list li {
+  width: 21vw;}
+.executive-image-list li img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: brightness(0.8);
+  transition: filter 0.3s;}
+.executive-image-list li img:hover {
+  filter: brightness(1.1);}
+@media (max-width: 700px) {
+.executive-room-feature {
+  padding-top: 15vw;
+  padding-bottom: 15vw; }
+.executive-room-feature h2 .en {
+  font-size: 10vw;}
+.executive-room-feature h2 span:not(.en) {
+  font-size: 3.5vw;}
+.executive-col {
+  flex-direction: column;
+  align-items: flex-start;}
+.executive-col .fadein {
+  width: 100%;
+  margin-bottom: -10vw;}
+.executive-room-txt {
+  position: relative;
+  transform: none;
+  top: 0;
+  width: 95%;
+  margin-left: auto;
+  padding: 8vw;}
+.executive-room-txt h3 {
+  font-size: 6vw;
+  margin-bottom: 4vw;}
+.executive-room-txt p {
+  font-size: 3.8vw;}
+.executive-col .bg_txt {
+  display: none;}
+.executive-image-list {
+  flex-wrap: wrap;
+  gap: 2vw;}
+.executive-image-list li {
+  width: 48%;
+  margin-bottom: 2vw;}
+}
+@media (min-width: 1500px) {
+.executive-room-feature {
+  padding-top: 120px;
+  padding-bottom: 120px;}
+.executive-room-wraper {
+  width: 1350px;}
+.executive-room-feature h2 .en {
+  font-size: 52.5px;}
+.executive-room-feature h2 span:not(.en) {
+  font-size: 16.5px;}
+.executive-col .fadein {
+  width: 975px;}
+.executive-room-txt {
+  width: 600px;
+  padding: 60px;
+  border-right-width: 3px;}
+.executive-room-txt h3 {
+  font-size: 27px;
+  margin-bottom: 22.5px;}
+.executive-room-txt p {
+  font-size: 15px;}
+.executive-col .bg_txt {
+  font-size: 150px;
+  bottom: -30px;}
+.executive-image-list li {
+  width: 315px;}
+}
+/* ==========================================================
+  お部屋のご紹介 (Executive Room Intro)
+ ========================================================== */
+.executive-room-intro {
+  background-color: #000000;
+  color: #ffffff;
+  font-family: "Shippori Mincho", "YuMincho", serif;
+  padding-top: 1vw;
+  padding-bottom: 10vw;
+  text-align: center;}
+.executive-room-intro h2 .en {
+  display: block;
+  font-size: 3.5vw;
+  font-weight: normal;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5vw;
+  color: #ffffff;}
+.executive-room-intro h2 span:not(.en) {
+  display: block;
+  font-size: 1.1vw;
+  color: #c9a063; /* ゴールド系のアセントカラー */
+  letter-spacing: 0.2em;}
+.executive-room-intro > p {
+  font-size: 1.1vw;
+  line-height: 2;
+  max-width: 60vw;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 6vw;
+  text-align: justify;}
+.executive-room-intro__images {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  width: 100%;}
+.executive-room-intro__image {
+  position: relative;
+  width: 50%;
+  overflow: hidden;}
+.executive-room-intro__image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.6s ease;}
+.executive-room-intro__image:hover img {
+  transform: scale(1.05);}
+.executive-room-badge {
+  position: absolute;
+  top: 0;  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #ffffff;
+  font-size: 0.8vw;
+  padding: 2vw 0.5vw;
+  writing-mode: vertical-rl;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  z-index: 2;}
+.executive-room-intro__txt {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 1vw 2vw;
+  z-index: 2;}
+.executive-room-intro__txt p {
+  font-size: 1vw;
+  margin: 0;
+  letter-spacing: 0.1em;}
+@media (max-width: 700px) {
+.executive-room-intro {
+  padding-top: 15vw;
+  padding-bottom: 15vw;}
+.executive-room-intro .fadein-child01 {
+  font-size: 10vw;}
+.executive-room-intro .fadein-child02 {
+  font-size: 3.5vw;}
+.executive-room-intro > p {
+  font-size: 3.8vw;
+  max-width: 85vw;
+  margin-bottom: 10vw;}
+.executive-room-intro__images {
+  flex-direction: column;}
+.executive-room-intro__image {
+  width: 100%;}
+.executive-room-badge {
+  font-size: 3vw;
+  padding: 5vw 1.5vw;}
+.executive-room-intro__txt {
+  padding: 3vw 5vw;}
+.executive-room-intro__txt p {
+  font-size: 4vw;}
+}
+@media (min-width: 1500px) {
+.executive-room-intro {
+  padding-top: 150px;
+  padding-bottom: 150px;}
+.executive-room-intro .fadein-child01 {
+  font-size: 60px;}
+.executive-room-intro .fadein-child02 {
+  font-size: 18px;}
+.executive-room-intro > p {
+  font-size: 16.5px;
+  max-width: 900px;
+  margin-bottom: 90px;}
+.executive-room-badge {
+  font-size: 12px;
+  padding: 30px 7.5px;}
+.executive-room-intro__txt {
+  padding: 15px 30px;}
+.executive-room-intro__txt p {
+  font-size: 15px;}
+}
+/* ==========================================================
+  ハイエンドタイプ客室詳細 (Executive Room Details)
+ ========================================================== */
+.executive-room-details {
+  background-color: #1a1a1a;
+  padding-top: 8vw;
+  padding-bottom: 8vw;
+  padding-left: 5vw;
+  padding-right: 5vw;
+  position: relative;
+  overflow: hidden;
+  color: #ffffff;
+  font-family: "Shippori Mincho", "YuMincho", serif;}
+.executive-room__bg-txt {
+  position: absolute;
+  top: 3vw;
+  left: 3vw;
+  font-size: 10vw;
+  color: rgba(255, 255, 255, 0.05);
+  font-family: serif;
+  line-height: 1;
+  z-index: 1;
+  margin: 0;}
+.executive-room-details h3 {
+  position: relative;
+  z-index: 2;
+  color: #c9a063;
+  font-size: 2.2vw;
+  font-weight: normal;
+  padding-left: 1.5vw;
+  margin-top: 0;
+  margin-bottom: 3vw;
+  letter-spacing: 0.1em;}
+.executive-room-details h3::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.2em;
+  width: 0.15vw;
+  height: 1em;
+  background-color: #c9a063;}
+.executive-room__lead {
+  position: relative;
+  z-index: 2;
+  font-size: 1.1vw;
+  line-height: 2;
+  margin-bottom: 5vw;
+  text-align: justify;}
+.executive-room__blocks {
+  position: relative;
+  z-index: 2;}
+.executive-room__block {
+  margin-bottom: 4vw;}
+.executive-room__block a {
+  text-decoration: none;
+  color: inherit;
+  display: block;}
+.executive-room__block .img {
+  margin-bottom: 2vw;
+  overflow: hidden;}
+.executive-room__block .img img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.6s ease;}
+.executive-room__block a:hover .img img {
+  transform: scale(1.03);}
+.executive-room__block .txt {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 1.5vw;}
+.executive-room__block .tit {
+  font-size: 1.8vw;
+  margin: 0;
+  position: relative;}
+.executive-room__block .tit::after {
+  content: "→";
+  margin-left: 1vw;
+  color: #c9a063;
+  font-size: 1.2vw;}
+.executive-room__block .tag {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 1vw;}
+.executive-room__block .tag li {
+  font-size: 0.8vw;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  padding-top: 0.2vw;
+  padding-bottom: 0.2vw;
+  padding-left: 0.8vw;
+  padding-right: 0.8vw;
+  white-space: nowrap;}
+.common_btn.cv {
+  text-align: center;
+  margin-top: 6vw;}
+.common_btn.cv a {
+  display: inline-block;
+  border: 1px solid #c9a063;
+  color: #c9a063;
+  text-decoration: none;
+  padding-top: 1.5vw;
+  padding-bottom: 1.5vw;
+  padding-left: 5vw;
+  padding-right: 5vw;
+  font-size: 1.1vw;
+  transition: all 0.3s ease;}
+.common_btn.cv a:hover {
+  background-color: #c9a063;
+  color: #ffffff;}
+.executive-standard-room__blocks {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;}
+.executive-standard-room__block {
+  width: 48.5%;
+  margin-bottom: 5vw;}
+.executive-standard-room__block a {
+  text-decoration: none;
+  color: inherit;
+  display: block;}
+.executive-standard-room__block .img {
+  margin-bottom: 1.5vw;
+  overflow: hidden;}
+.executive-standard-room__block .img img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.6s ease;}
+.executive-standard-room__block a:hover .img img {
+  transform: scale(1.05);}
+.executive-standard-room__block .txt {
+  padding-top: 1vw;}
+.executive-standard-room__block .tit {
+  font-size: 1.6vw;
+  margin-bottom: 1vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;}
+.executive-standard-room__block .tit::after {
+  content: "→";
+  font-size: 1.2vw;
+  color: #c9a063;
+  transition: transform 0.3s;}
+.executive-standard-room__block a:hover .tit::after {
+  transform: translateX(0.5vw);}
+.executive-standard-room__block .tag {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 0.8vw;}
+.executive-standard-room__block .tag li {
+  font-size: 0.8vw;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  padding-top: 0.2vw;
+  padding-bottom: 0.2vw;
+  padding-left: 0.8vw;
+  padding-right: 0.8vw;
+  color: #cccccc;}
+
+@media (max-width: 700px) {
+.executive-room-details {
+  padding-top: 15vw;
+  padding-bottom: 15vw;}
+.executive-room__bg-txt {
+  font-size: 20vw;
+  top: 5vw;}
+.executive-room-details h3 {
+  font-size: 6vw;
+  padding-left: 4vw;
+  margin-bottom: 6vw;}
+.executive-room-details h3::before {
+  width: 1vw;}
+.executive-room__lead {
+  font-size: 3.8vw;
+  margin-bottom: 10vw;}
+.executive-room__block .txt {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4vw;}
+.executive-room__block .tit {
+  font-size: 5vw;}
+.executive-room__block .tag {
+  gap: 2vw;
+  flex-wrap: wrap;}
+.executive-room__block .tag li {
+  font-size: 3vw;
+  padding-top: 1vw;
+  padding-bottom: 1vw;
+  padding-left: 3vw;
+  padding-right: 3vw;}
+.common_btn.cv a {
+  font-size: 4vw;
+  padding-top: 4vw;
+  padding-bottom: 4vw;
+  width: 80%;}
+.executive-standard-room__block {
+  width: 100%;
+  margin-bottom: 12vw;}
+.executive-standard-room__block .tit {
+  font-size: 5vw;
+  margin-bottom: 3vw;}
+.executive-standard-room__block .tit::after {
+  font-size: 4vw;}
+.executive-standard-room__block .tag {
+  gap: 2vw;}
+.executive-standard-room__block .tag li {
+  font-size: 3vw;
+  padding: 1vw 3vw;}
+}
+@media (min-width: 1500px) {
+.executive-room-details {
+  padding-top: 120px;
+  padding-bottom: 120px;
+  padding-left: 75px;
+  padding-right: 75px;}
+.executive-room__bg-txt {
+  font-size: 225px;
+  top: 30px;
+  left: 60px;}
+.executive-room-details h3 {
+  font-size: 33px;
+  padding-left: 22.5px;
+  margin-bottom: 45px;}
+.executive-room-details h3::before {
+  width: 2.25px;}
+.executive-room__lead {
+  font-size: 16.5px;
+  margin-bottom: 75px;}
+.executive-room__block .txt {
+  padding-bottom: 22.5px;}
+.executive-room__block .tit {
+  font-size: 27px;}
+.executive-room__block .tit::after {
+  font-size: 18px;
+  margin-left: 15px;}
+.executive-room__block .tag {
+  gap: 15px;}
+.executive-room__block .tag li {
+  font-size: 12px;
+  padding: 3px 12px;}
+.common_btn.cv a {
+  padding: 22.5px 75px;
+  font-size: 16.5px;}
+.executive-standard-room__block {
+  margin-bottom: 75px;}
+.executive-standard-room__block .tit {
+  font-size: 24px;
+  margin-bottom: 15px;}
+.executive-standard-room__block .tit::after {
+  font-size: 18px;}
+.executive-standard-room__block .tag {
+  gap: 12px;}
+.executive-standard-room__block .tag li {
+  font-size: 12px;
+  padding: 3px 12px;}
+}
+/* ==========================================================
+  Room Detail
+ ========================================================== */
+.standard-rooms {
+  width: 90vw;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 5vw;
+  padding-bottom: 5vw;
+  color: #333333;}
+.standard-room-detail {
+  margin-bottom: 8vw;}
+.standard-room-detail h2 {
+  font-family: "Shippori Mincho", "YuMincho", serif;
+  font-size: 2.2vw;
+  font-weight: normal;
+  padding-bottom: 1vw;
+  margin-bottom: 3vw;
+  border-bottom: 0.1vw solid #dddddd;
+  position: relative;
+  letter-spacing: 0.05em;}
+.standard-room-detail h2::after {
+  content: "";
+  position: absolute;
+  bottom: -0.1vw;
+  left: 0;
+  width: 15vw;
+  height: 0.3vw;
+  background-color: #b39756;}
+.room-photo {
+  margin-bottom: 3vw;}
+.room-photo img {
+  width: 100%;
+  height: auto;
+  display: block;}
+.room-description {
+  font-size: 1.1vw;
+  line-height: 2;
+  margin-bottom: 4vw;}
+.standard-room-detail a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30vw;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 1.5vw;
+  padding-bottom: 1.5vw;
+  background-color: #b39756;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.2vw;
+  transition: opacity 0.3s;}
+.standard-room-detail a:hover {
+  opacity: 0.8;}
+.standard-room-detail a::before {
+  content: "";
+  width: 1.4vw;
+  height: 1.4vw;
+  margin-right: 0.8vw;
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zM9 14H7v-2h2v2zm4 0h-2v-2h2v2zm4 0h-2v-2h2v2zm-8 4H7v-2h2v2zm4 0h-2v-2h2v2zm4 0h-2v-2h2v2z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: contain;}
+@media (max-width: 700px) {
+.standard-rooms {
+  width: 92vw;
+  padding-top: 10vw;}
+.standard-room-detail h2 {
+  font-size: 5.5vw;
+  padding-bottom: 3vw;
+  margin-bottom: 5vw;}
+.standard-room-detail h2::after {
+  width: 30vw;
+  height: 0.8vw;}
+.room-description {
+  font-size: 3.8vw;
+  line-height: 1.8;
+  margin-bottom: 8vw;}
+.standard-room-detail a {
+  width: 80vw;
+  padding-top: 4vw;
+  padding-bottom: 4vw;
+  font-size: 4vw;}
+.standard-room-detail a::before {
+  width: 5vw;
+  height: 5vw;
+  margin-right: 2vw;}
+}
+@media (min-width: 1500px) {
+.standard-rooms {
+  width: 1350px;
+  padding-top: 75px;
+  padding-bottom: 75px;}
+.standard-room-detail h2 {
+  font-size: 33px;
+  padding-bottom: 15px;
+  margin-bottom: 45px;
+  border-bottom-width: 1px;}
+.standard-room-detail h2::after {
+  width: 225px;
+  height: 4.5px;}
+.room-photo {
+  margin-bottom: 45px;}
+.room-description {
+  font-size: 16.5px;
+  margin-bottom: 60px;}
+.standard-room-detail a {
+  width: 450px;
+  padding-top: 22.5px;
+  padding-bottom: 22.5px;
+  font-size: 18px;}
+.standard-room-detail a::before {
+  width: 21px;
+  height: 21px;
+  margin-right: 12px;}
+}

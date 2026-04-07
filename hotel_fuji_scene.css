@@ -1,0 +1,609 @@
+
+/* ==========================================================
+   Base Styles
+   ========================================================== */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Shippori Mincho", "YuMincho", serif;
+    color: #333333;}
+img {
+    width: 100%;
+    height: auto;
+    display: block;}
+/* ==========================================================
+   Font Families
+   ========================================================== */
+.notoserif {
+    font-family: "Noto Serif JP", serif;}
+.yumiin {
+    font-family: "Yu Mincho", "YuMincho", serif;}
+/* ==========================================================
+   Header
+   ========================================================== */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.33vw 4vw;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    position: fixed;
+    top:0;
+    width:100%;
+    z-index:100;}
+header .logo {
+    width: 16vw;
+    margin: 0;}
+header .logo a {
+    display: block;
+    text-indent: -9999px;
+    background-image: url('https://www.mtfuji-hotel.com/_common/img/logo.svg'); /* 画像のロゴパス */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: left center;
+    height: 4.66vw;}
+header .head_r ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 2.66vw;}
+header .head_r ul li a {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #003087;}
+header .head_r ul li a span:first-child {
+    font-size: 1.5vw;
+    letter-spacing: 0.1em;}
+header .head_r ul li a .en {
+    font-size: 1vw;
+    font-family: "Garamond", serif;
+    margin-top: 0.2vw;
+    opacity: 0.7;}
+/* ==========================================================
+   Page Hero
+   ========================================================== */
+.page_hero {
+    position: relative;
+    width: 100%;
+    height: 20vw;
+    overflow: hidden;
+    margin-top:6vw;}
+@media screen and (max-width:700px){.page_hero{margin-top:30vw;}}
+.page_hero .img {
+    margin: 0;
+    width: 100%;
+    height: 100%;}
+.page_hero .img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;}
+.page_hero .inner {
+    position: absolute;
+    top: 2vw;
+    left: 2vw;
+    z-index: 2;}
+.breadcrumb {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1vw 0;}
+.breadcrumb li {
+    font-size: 1.1vw;
+    color: #ffffff;
+    letter-spacing: 0.05em;}
+.breadcrumb li a {
+    color: #ffffff;
+    text-decoration: none;
+    border-bottom: 0.1vw solid #ffffff;}
+.breadcrumb li:not(:last-child)::after {
+    content: "/";
+    margin: 0 0.8vw;
+    color: #ffffff;}
+.page_hero .tit {
+    color: #ffffff;
+    font-size: 3.5vw;
+    font-weight: normal;
+    margin: 0;
+    margin-top:5vw;
+    letter-spacing: 0.2em;
+    text-shadow: 0 0 0.66vw rgba(0, 0, 0, 0.3);}
+/* ==========================================================
+   Main Layout
+   ========================================================== */
+.wrapper .main {
+    width: 85vw;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 5vw;
+    padding-bottom: 5vw;}
+.wrapper .main .block {
+    margin-bottom: 8vw;}
+/* --- ページナビゲーション (pagenav) --- */
+.pagenav {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin: 0;}
+.pagenav li {
+    width: 50%; /* col4 */
+    box-sizing: border-box;
+    border-right: 0.1vw solid #dddddd;
+	margin-bottom:3vw;}
+.pagenav li:first-child,.pagenav li:nth-child(5){
+	border-left: 0.1vw solid #dddddd;}
+.pagenav li a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2vw 1.5vw;
+    text-decoration: none;
+    color: #333333;
+    font-size: 1.4vw;
+    transition: background-color 0.3s;}
+.pagenav li a:hover {
+    background-color: #f9f9f9;
+    opacity: 0.8;}
+/* ナビ内の矢印アイコン */
+.pagenav li a::after {
+    content: "";
+    width: 0.8vw;
+    height: 0.8vw;
+    border-right: 0.15vw solid #003087;
+    border-bottom: 0.15vw solid #003087;
+    transform: rotate(45deg);
+    display: block;}
+.wrapper .main h2 {
+    color: #003087;
+    font-size: 2.2vw;
+    font-weight: normal;
+    padding-top: 3vw;
+    margin-top: 0;
+    margin-bottom: 4vw;
+    border-top: 0.2vw solid #003087;
+    letter-spacing: 0.1em;}
+.wrapper .main .common_block img {
+    max-width: 100%;
+    height: auto;
+    display: inline-block;}
+.wrapper .main .common_block p {
+    text-align: left;
+    margin-top: 3vw;}
+.wrapper .main .common_block a {
+    color: #003087;
+    text-decoration: underline;
+    transition: opacity 0.3s;}
+.wrapper .main .common_block a:hover {
+    opacity: 0.7;}
+.common_block {
+    margin-bottom: 3vw;
+    line-height: 1.8;
+    color: #333333;}
+.block h3 {
+    display: flex;
+    align-items: center;
+    color: #003087; /* ホテルマウント富士のネイビー */
+    font-size: 1.6vw;
+    font-weight: normal;
+    margin-top: 5vw;
+    margin-bottom: 2vw;
+    position: relative;
+    padding-left: 2.5vw;}
+.block h3::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1.5vw;
+    height: 0.15vw;
+    background-color: #003087;}
+.common_block ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;}
+.common_block li {
+    position: relative;
+    padding-left: 1.5vw;
+    margin-bottom: 0.8vw;
+    font-size: 1.3vw;}
+.common_block li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.7em;
+    width: 0.4vw;
+    height: 0.4vw;
+    background-color: #003087;
+    border-radius: 50%;}
+.common_block span {
+    display: inline-block;
+    line-height: 1.8;}
+/* クリアフィックス対応 */
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;}
+/* ==========================================================
+   Accordion Section
+   ========================================================== */
+.common_accordion {
+    width: 100%;
+    margin-bottom: 5vw;}
+.trigger {
+    background-color: #4d4e53;
+    color: #ffffff;
+    padding: 1.5vw 4vw;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    font-size: 1.4vw;
+    letter-spacing: 0.1em;
+    margin-bottom: 0;
+	text-align: left!important;}
+.trigger::after {
+    content: "";
+    position: absolute;
+    right: 4vw;
+    top: 50%;
+    width: 1.2vw;
+    height: 1px;
+    background-color: #ffffff;
+    transform: translateY(-50%);}
+.trigger::before {
+    content: "";
+    position: absolute;
+    right: 4.6vw;
+    top: 50%;
+    width: 1px;
+    height: 1.2vw;
+    background-color: #ffffff;
+    transform: translateY(-50%);
+    transition: transform 0.3s;}
+.trigger.active::before {
+    transform: translateY(-50%) rotate(90deg);
+    opacity: 0;}
+.accordion {
+    display: none;
+    padding: 3vw 0;}
+.tbr_type03 {
+    width: 60%;
+    border-collapse: collapse;
+    border: 1px solid #dcdcdc;}
+.tbr_type03 th {
+    background-color: #f4f6f8;
+    color: #333333;
+    padding: 2vw;
+    border: 1px solid #dcdcdc;
+    font-size: 1.4vw;
+    text-align: left;
+    width: 30%;}
+.tbr_type03 td {
+    background-color: #ffffff;
+    color: #333333;
+    padding: 2vw;
+    border: 1px solid #dcdcdc;
+    font-size: 1.4vw;
+    text-align: left;}
+.common_btn {
+    text-align: center;
+    margin-top: 3vw;}
+.common_btn a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #8a2e3b;
+    color: #ffffff;
+    text-decoration: none;
+    width: 35vw;
+    height: 5vw;
+    font-size: 1.4vw;
+    position: relative;
+    transition: background-color 0.3s;}
+.common_btn a:hover {
+    background-color: #6d242f;}
+.common_btn a::after {
+    content: "→";
+    position: absolute;
+    right: 1.5vw;
+    font-size: 1.3vw;}
+.wrapper .main .common_block .common_btn{
+    text-align: center;}
+.wrapper .main .common_block .common_btn a{
+    color: #fff!important;
+    text-decoration: none;}
+
+/* ==========================================================
+   Common Tit Section (Pet Hotel Intro)
+   ========================================================== */
+.common_tit {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    padding: 4vw 0;
+    margin-bottom: 5vw;}
+.common_tit::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 80%;
+    height: 100%;
+    background-color: #f4f6f8;
+    z-index: 1;}
+.common_tit .txt {
+    width: 40%;
+    position: relative;
+    z-index: 2;
+    padding-right: 5vw;}
+.common_tit h2 {
+    color: #003087;
+    font-size: 2.2vw;
+    font-family: serif;
+    margin-top: 0;
+    margin-bottom: 2vw;
+    font-weight: normal;}
+.common_tit .txt div {
+    font-size: 1.06vw;
+    line-height: 2;
+    color: #333333;
+    margin-bottom: 0.5vw;}
+.common_tit .img {
+    width: 50%;
+    position: relative;
+    z-index: 2;
+    margin: 0;}
+.common_tit .img img {
+    width: 100%;
+    height: 30vw;
+    object-fit: cover;
+    display: block;
+    box-shadow: 0 1vw 3vw rgba(0, 0, 0, 0.1);}
+
+
+/* ==========================================================
+   Common Slider Section
+   ========================================================== */
+.common_slider {
+    width: 80vw;
+    margin: 0 auto 3vw;
+    position: relative;}
+.slider {
+    margin-bottom: 2vw;
+    position: relative;}
+.slider .slides img {
+    width: 100%;
+    height: auto;}
+.common_slider .slick-prev,
+.common_slider .slick-next {
+    position: absolute;
+    top: 50%;
+    width: 4vw;
+    height: 4vw;
+    background-color: #333a4d;
+    border: none;
+    z-index: 10;
+    cursor: pointer;
+    transform: translateY(-50%);}
+.common_slider .slick-prev {
+    left: -6vw;}
+.common_slider .slick-next {
+    right: -6vw;}
+.common_slider .slick-prev::before,
+.common_slider .slick-next::before {
+    content: "";
+    display: block;
+    width: 1vw;
+    height: 1vw;
+    border-top: 2px solid #ffffff;
+    border-left: 2px solid #ffffff;
+    margin: auto;}
+.common_slider .slick-prev::before {
+    transform: rotate(-45deg);
+    margin-left: 1.5vw;}
+.common_slider .slick-next::before {
+    transform: rotate(135deg);
+    margin-right: 1.5vw;}
+.thum {
+    display: flex;
+    justify-content: center;
+    gap: 1vw;}
+.thum_slides {
+    width: 33.333%;
+    padding: 0 0.5vw;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 0.3s;}
+.thum_slides img {
+    width: 100%;
+    height: 10vw;
+    object-fit: cover;}
+.thum_slides .slick-initialized .slick-slide{
+    width: 15vw!important;}
+.thum_slides.slick-current {
+    opacity: 1;}
+
+/* ==========================================================
+   Media Queries
+   ========================================================== */
+
+/* --- Mobile (under 700px) --- */
+@media screen and (max-width: 700px) {
+header {
+    flex-direction: column;
+    padding: 4vw;}
+header .logo {
+    width: 40vw;
+    margin-bottom: 4vw;}
+header .logo a {
+    height: 10vw;
+    background-position: center;}
+header .head_r ul {
+    gap: 4vw;
+    flex-wrap: wrap;
+    justify-content: center;}
+header .head_r ul li a span:first-child {
+    font-size: 3vw;}
+header .head_r ul li a .en {
+    font-size: 2vw;}
+.sp_none {
+    display: none !important;}
+.page_hero {
+    height: 40vw;}
+.page_hero .inner {
+    bottom: 5vw;
+    left: 5vw;}
+.breadcrumb li {
+    font-size: 3vw;}
+.page_hero .tit {
+    font-size: 8vw;}
+.inner {
+    width: 92vw;
+    flex-direction: column;}
+.thum_slides img {
+    height: 15vw;}
+.slider_wrap {
+    padding-left: 0;
+    margin-top: 5vw;}
+.slider_wrap .slides {
+    padding: 0 2vw;}
+.common_btn_s a {
+    width: 60vw;
+    height: 12vw;
+    font-size: 4vw;
+    padding-left: 4vw;
+    padding-right: 4vw;}
+.common_btn_s a::after {
+    font-size: 5vw;}
+.block h3 {
+    font-size: 4.5vw;
+    margin-bottom: 5vw;
+    padding-left: 8vw;}
+.block h3::before{
+    width: 5vw;
+    height: 0.1vw;}
+.common_block li {
+    padding-left: 6vw;
+    margin-bottom: 1vw;
+    font-size: 3.4vw;}
+.common_block li::before {
+    width: 1.5vw;
+    height: 1.5vw;}
+.wrapper .main  {
+    width: 92vw;
+    padding-top: 10vw;}
+.pagenav li {
+    width: 50%;}
+.pagenav li a {
+    padding: 4vw 3vw;
+    font-size: 3.5vw;}
+.pagenav li a::after {
+    width: 2.5vw;
+    height: 2.5vw;
+    border-right-width: 0.4vw;
+    border-bottom-width: 0.4vw;}
+.wrapper .main h2 {
+    font-size: 6vw;
+    padding-top: 6vw;
+    margin-bottom: 8vw;
+    border-top-width: 0.8vw;}
+.wrapper .main .common_block p {
+    margin-top: 6vw;
+    font-size: 3.4vw;}
+.wrapper .main .common_block span[style*="font-size: 14pt"] {
+    font-size: 4vw !important;}
+.tbr_type01 th {
+    font-size: 3vw;}
+.tbr_type01 td {
+    font-size: 3vw;}
+.common_block{
+    font-size:3.4vw;}
+.common_tit{
+    flex-direction: column-reverse;
+    gap: 10vw;
+    padding: 5vw 0;}
+.common_tit::before {
+    display: none;}
+.common_tit .txt {
+    width: 90%;
+    padding-right: 5vw;}
+.common_tit h2 {
+    font-size: 4.5vw;
+    margin-top: 0;
+    margin-bottom: 2vw;}
+.common_tit .txt div {
+    font-size: 3vw;
+    margin-bottom: 0.5vw;}
+.common_tit .img {
+    width: 100%;}
+.common_tit .img img {
+    height: 60vw;}
+.common_btn::after{
+    content:"";
+    display: block;
+    margin-bottom:15vw;}
+.common_btn a {
+    width: 80vw;
+    height: 14vw;
+    font-size: 4vw;}
+.common_btn a::after {
+    font-size: 4vw;
+    right: 4vw;}
+}
+
+/* --- Desktop Fixed (over 1500px) --- */
+@media screen and (min-width: 1500px) {
+    header {
+    padding: 20px 60px;}
+header .logo {
+    width: 240px;}
+header .logo a {
+    height: 70px;}
+header .head_r ul {
+    gap: 40px;}
+header .head_r ul li a span:first-child {
+    font-size: 16px;}
+header .head_r ul li a .en {
+    font-size: 11px;}
+.page_hero {
+    height: 225px;}
+.page_hero .inner {
+    bottom: 30px;
+    left: 60px;}
+.breadcrumb li {
+    font-size: 12px;}
+.page_hero .tit {
+    font-size: 40px;}
+.inner {
+    width: 1350px;}
+}
+
+/* ==========================================================================
+  スライダーCSS化
+  ========================================================================== */
+.slider {
+   width: 100%;
+   position: relative;
+   overflow: hidden;
+   display: flex;
+   flex-wrap:wrap;
+   justify-content: center;
+   gap:2vw;}
+.slider .slides{
+   width: 30%;
+   display: inline-block;}
+.slider .slick-prev,
+.slider .slick-next,
+.slider .slick-prev::before,
+.slider .slick-next::before {
+   display: none;}
+@media screen and (max-width: 700px) {
+.slider {gap:5vw;}
+.slider .slides{width: 45%;}
+}
