@@ -84,7 +84,6 @@ img[src*="rd.rakuten.co.jp/"]{
    Restaurant Wrap Section
    ========================================================== */
 .restaurant-wrap {
-    margin-top:6vw;
     width: 100%;
     margin-left: auto;
     margin-right: auto;
@@ -179,7 +178,6 @@ img[src*="rd.rakuten.co.jp/"]{
 @media (max-width: 700px) {
 .restaurant-wrap {
     width: 100%;
-    margin-top: 30vw;
     padding-top: 10vw;
     padding-bottom: 10vw;}
 .restaurant-wrap h2 {
