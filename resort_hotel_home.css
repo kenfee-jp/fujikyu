@@ -199,6 +199,8 @@ img[src*="rd.rakuten.co.jp/"]{
     z-index: 0;
     color: #ffffff;
     overflow: hidden;}
+.scene__col:link{
+   color: #fff;}
 .scene__col img {
     height: 100%;
     object-fit: cover;
