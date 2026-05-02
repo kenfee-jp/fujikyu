@@ -29,7 +29,6 @@ header {
     padding: 1.33vw 4vw;
     background-color: #ffffff;
     box-sizing: border-box;
-    position: fixed;
     top:0;
     width:100%;
     z-index:100;}
