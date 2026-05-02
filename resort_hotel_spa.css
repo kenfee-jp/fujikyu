@@ -12,6 +12,8 @@ img {
     width: 100%;
     height: auto;
     display: block;}
+img[src*="rd.rakuten.co.jp/"]{
+    height: 1px;}
 .mincho {
     font-family: "Shippori Mincho", "YuMincho", serif;}
 .block {
