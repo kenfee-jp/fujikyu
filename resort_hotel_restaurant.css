@@ -11,6 +11,8 @@ img {
     width: 100%;
     height: auto;
     display: block;}
+img[src*="rd.rakuten.co.jp/"]{
+    height: 1px;}
 .fadein {
     opacity: 1;}
 .mincho {
