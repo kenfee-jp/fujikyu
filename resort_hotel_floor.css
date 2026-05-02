@@ -73,7 +73,6 @@ img[src*="rd.rakuten.co.jp/"]{
    ページタイトルエリア (page_tit)
    ========================================================== */
 .page_tit {
-    margin-top:6vw;
     position: relative;
     width: 100%;
     height: 30vw;
@@ -81,7 +80,6 @@ img[src*="rd.rakuten.co.jp/"]{
     display: flex;
     align-items: center;
     justify-content: center;}
-@media (max-width: 700px) {.page_tit {margin-top:30vw;}}
 @media (min-width: 1500px) {
 .page_tit {
     height: 450px;}
