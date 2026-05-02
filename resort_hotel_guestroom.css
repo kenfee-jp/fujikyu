@@ -62,7 +62,7 @@ img[src*="rd.rakuten.co.jp/"]{
   position: relative;
   width: 100%;
   padding: 4vw 0;
-  margin-top: 6vw;
+  margin-top: 0;
   background-image: url('https://www.highlandresort.co.jp/rooms/grandexecutive/_img/img_gef_rooms01.jpg');
   background-size: cover;
   background-position: center;
@@ -186,8 +186,6 @@ img[src*="rd.rakuten.co.jp/"]{
   font-size: 2vw;}
 .room-card__capacity {
   font-size: 1.2vw;}
-.mountview{
-  margin-top:30vw;}
 .mountview__inner {
   width: 90vw;}
 .mountview__header-en {
