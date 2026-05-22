@@ -304,3 +304,366 @@ img[src*="rd.rakuten.co.jp/"]{
     transition: opacity 0.3s;}
 .overimg:hover img {
     opacity: 0.7;}
+
+
+/* ==========================================================================
+   フロアガイド　各施設写真追加
+   ========================================================================== */
+.wrapper.floor_guide{
+    width: 80%;}
+/* 上部ナビゲーションリンク */
+.floor_guide .alink {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin: 5vw auto;
+    border-right: 0.1vw solid #dddddd;}
+.floor_guide .alink li {
+    width: 25%;
+    box-sizing: border-box;
+    margin-bottom: 3vw;
+    border-left: 0.1vw solid #dddddd;}
+.floor_guide .alink li a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5vw;
+    text-decoration: none;
+    color: #333333;
+    font-family: "Shippori Mincho", "YuMincho", serif;
+    font-size: 1vw;
+    line-height: 1.5;
+    transition: background-color 0.3s, color 0.3s;}
+.floor_guide .alink li a::after {
+    content: "↓";
+    color: #c9a063;
+    font-size: 1.2vw;
+    font-weight: normal;
+    margin-left: 1vw;}
+/* 各フロアの見出し（H2） */
+.floor_guide h2 {
+    display: block;
+    font-size: 2.6vw;
+    font-weight: bold;
+    padding-bottom: 0.6vw;
+    margin-top: 0;
+    margin-bottom: 2vw;
+    border-bottom: 1px solid #333333;
+    letter-spacing: 0.05em;}
+.floor_guide .mincho {
+    font-family: "Times New Roman", "Yu Mincho", "ヒラギノ明朝 ProN", serif;}
+.floor_guide .tac {
+    display: block;
+    text-align: center;
+    margin-bottom: 4vw;}
+.floor_guide .tac img {
+    display: inline-block;
+    max-width: 80%;
+    height: auto;}
+.floor_guide .common_1col,
+.floor_guide .common_2col,
+.floor_guide .common_3col {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2vw;
+    padding: 0;
+    margin: 0;}
+.floor_guide .col {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    border: 1px solid #e2e2e2;
+    box-sizing: border-box;
+    overflow: hidden;
+    margin: 1vw auto;}
+.floor_guide .link-block-placeholder,
+.floor_guide .col > a {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    color: inherit;
+    text-decoration: none;}
+/* 各種カラムの横幅計算（隙間を除く） */
+.floor_guide .common_2col .col {
+    width: calc(50% - 1vw);}
+.floor_guide .common_3col .col {
+    width: calc(33.333% - 1.34vw);}
+/* 【重要】1カラム表示時の、HTMLを変えない左右2分割Gridレイアウト */
+.floor_guide .common_1col .col {
+    width: 100%;}
+.floor_guide .common_1col .link-block-placeholder,
+.floor_guide .common_1col .col > a {
+    display: grid;
+    grid-template-columns: 42% 58%;
+    grid-template-rows: auto 1fr;}
+.floor_guide .common_1col .col .img {
+    grid-column: 1;
+    grid-row: 1 / 3;
+    margin: 0;
+    height: 100%;}
+.floor_guide .common_1col .col .txt {
+    grid-column: 2;
+    grid-row: 1;}
+.floor_guide .common_1col .col .detail {
+    grid-column: 2;
+    grid-row: 2;}
+/* 各カード内コンテンツのデザイン */
+.floor_guide .col .img {
+    display: block;
+    margin: 0;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;}
+.floor_guide .col .img img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;}
+.floor_guide .col .txt {
+    display: block;
+    padding: 1.5vw 1.5vw 0.5vw 1.5vw;}
+.floor_guide .col .txt p {
+    display: block;
+    margin: 0 0 0.4vw 0;
+    font-size: 1.1vw;
+    color: #666666;}
+.floor_guide .col .txt .tit {
+    display: block;
+    font-size: 1.8vw;
+    font-weight: normal;
+    color: #111111;
+    margin: 0 0 0.6vw 0;}
+/* 属性タグ */
+.floor_guide .col .tag {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5vw;
+    list-style: none;
+    padding: 0;
+    margin: 0;}
+.floor_guide .col .tag li {
+    display: block;
+    font-size: 1vw;
+    color: #666666;
+    background-color: #f7f7f7;
+    padding: 0.2vw 0.6vw;
+    border: 1px solid #e0e0e0;}
+/* 説明テキスト文 */
+.floor_guide .col .detail {
+    display: block;
+    padding: 0 1.5vw 1.5vw 1.5vw;
+    font-size: 1.2vw;
+    color: #444444;
+    line-height: 1.7;}
+.floor_guide .col .detail p {
+    display: block;
+    margin: 0 0 1vw 0;}
+.floor_guide .col .detail p:last-child {
+    margin-bottom: 0;}
+/* 営業時間・料金等の枠組みボックス */
+.floor_guide .col .box {
+    display: block;
+    margin-top: 1vw;
+    padding: 1vw;
+    background-color: #fafafa;
+    border: 1px solid #dddddd;
+    font-size: 1.1vw;}
+.floor_guide .col .box p {
+    display: block;
+    margin: 0 0 0.3vw 0;}
+.floor_guide .col .box p:last-child {
+    margin-bottom: 0;}
+/* 注意書きの箇条書き */
+.floor_guide .col .notes_list {
+    display: block;
+    list-style: none;
+    padding: 0;
+    margin: 1vw 0 0 0;}
+.floor_guide .col .notes_list li {
+    display: block;
+    font-size: 1.1vw;
+    color: #333333;
+    position: relative;
+    padding-left: 1.2vw;}
+.floor_guide .col .notes_list li::before {
+    content: "※";
+    position: absolute;
+    left: 0;
+    top: 0;}
+
+/* --------------------------------------------------------------------------
+   700px未満：スマートフォン・縦向き表示ビュー
+   -------------------------------------------------------------------------- */
+@media (max-width: 699px) {
+    .floor_guide .alink {
+        padding: 3vw;
+        gap: 2vw;
+    }
+    .floor_guide .alink li{
+        width: 48%;}
+    .floor_guide .alink li div,
+    .floor_guide .alink li a {
+        font-size: 3.2vw;
+        padding: 5vw 3vw;
+    }
+    .floor_guide h2 {
+        font-size: 5vw;
+        padding-bottom: 1vw;
+        margin-bottom: 4vw;
+    }
+    .floor_guide .tac {
+        margin-bottom: 5vw;
+    }
+    .floor_guide .common_1col,
+    .floor_guide .common_2col,
+    .floor_guide .common_3col {
+        gap: 5vw;
+    }
+    .floor_guide .common_2col .col,
+    .floor_guide .common_3col .col {
+        width: 100%;
+    }
+    /* スマホ画面時は1列カードも通常の縦並びにリセット */
+    .floor_guide .common_1col .link-block-placeholder,
+    .floor_guide .common_1col .col > a {
+        display: flex;
+        flex-direction: column;
+    }
+    .floor_guide .common_1col .col .img {
+        height: auto;
+    }
+    .floor_guide .col .img {
+        aspect-ratio: 16 / 10;
+    }
+    .floor_guide .col .txt {
+        padding: 4vw 4vw 2vw 4vw;
+    }
+    .floor_guide .col .txt p {
+        margin-bottom: 1vw;
+        font-size: 3vw;
+    }
+    .floor_guide .col .txt .tit {
+        font-size: 4.6vw;
+        margin-bottom: 2vw;
+    }
+    .floor_guide .col .tag {
+        gap: 1.5vw;
+    }
+    .floor_guide .col .tag li {
+        font-size: 2.6vw;
+        padding: 0.5vw 2vw;
+    }
+    .floor_guide .col .detail {
+        padding: 0 4vw 4vw 4vw;
+        font-size: 3.2vw;
+    }
+    .floor_guide .col .detail p {
+        margin-bottom: 2vw;
+    }
+    .floor_guide .col .box {
+        margin-top: 3vw;
+        padding: 3vw;
+        font-size: 3vw;
+    }
+    .floor_guide .col .box p {
+        margin-bottom: 1vw;
+    }
+    .floor_guide .col .notes_list {
+        margin-top: 3vw;
+    }
+    .floor_guide .col .notes_list li {
+        font-size: 3vw;
+        padding-left: 4vw;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   1500px以上：大画面・ワイドデスクトップビュー（すべての単位をpxに統一）
+   -------------------------------------------------------------------------- */
+@media (min-width: 1500px) {
+    .floor_guide {
+        width: 1350px;
+    }
+    .floor_guide .block {
+        margin-bottom: 90px;
+    }
+    .floor_guide .common_block {
+        margin-bottom: 45px;
+    }
+    .floor_guide .alink {
+        padding: 22px;
+        gap: 15px;
+    }
+    .floor_guide .alink li{
+        width: 23%;
+    }
+    .floor_guide .alink li div,
+    .floor_guide .alink li a {
+        padding: 12px 30px;
+        font-size: 18px;
+    }
+    .floor_guide h2 {
+        font-size: 36px;
+        padding-bottom: 8px;
+        margin-bottom: 30px;
+    }
+    .floor_guide .tac {
+        margin-bottom: 45px;
+    }
+    .floor_guide .common_1col,
+    .floor_guide .common_2col,
+    .floor_guide .common_3col {
+        gap: 30px;
+    }
+    .floor_guide .common_2col .col {
+        width: calc(50% - 15px);
+    }
+    .floor_guide .common_3col .col {
+        width: calc(33.333% - 20px);
+    }
+    .floor_guide .common_1col .link-block-placeholder,
+    .floor_guide .common_1col .col > a {
+        grid-template-columns: 42% 58%;
+    }
+    .floor_guide .col .txt {
+        padding: 22px 22px 7px 22px;
+    }
+    .floor_guide .col .txt p {
+        margin-bottom: 6px;
+        font-size: 16px;
+    }
+    .floor_guide .col .txt .tit {
+        font-size: 26px;
+        margin-bottom: 10px;
+    }
+    .floor_guide .col .tag {
+        gap: 7px;
+    }
+    .floor_guide .col .tag li {
+        font-size: 14px;
+        padding: 3px 10px;
+    }
+    .floor_guide .col .detail {
+        padding: 0 22px 22px 22px;
+        font-size: 18px;
+    }
+    .floor_guide .col .detail p {
+        margin-bottom: 15px;
+    }
+    .floor_guide .col .box {
+        margin-top: 15px;
+        padding: 15px;
+        font-size: 16px;
+    }
+    .floor_guide .col .box p {
+        margin-bottom: 4px;
+    }
+    .floor_guide .col .notes_list {
+        margin-top: 15px;
+    }
+    .floor_guide .col .notes_list li {
+        font-size: 16px;
+        padding-left: 18px;
+    }
+}
