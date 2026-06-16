@@ -694,7 +694,7 @@ img[src*="rd.rakuten.co.jp/"]{
   	margin: 0;
   	position: relative;}
 .executive-room__block .tit::after {
-  	content: "→";
+  	content: "";
   	margin-left: 1vw;
   	color: #c9a063;
   	font-size: 1.2vw;}
