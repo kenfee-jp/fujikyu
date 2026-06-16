@@ -761,7 +761,7 @@ img[src*="rd.rakuten.co.jp/"]{
   	align-items: center;
   	justify-content: space-between;}
 .executive-standard-room__block .tit::after {
-  	content: "→";
+  	content: "";
   	font-size: 1.2vw;
   	color: #c9a063;
   	transition: transform 0.3s;}
